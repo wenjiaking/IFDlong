@@ -1,0 +1,1670 @@
+Family name	Common root gene symbol
+Fascin family	FSCN
+Abhydrolase domain containing	ABHD
+ZYG11 cell cycle regulator family	ZYG11
+Zona pellucida glycoproteins	ZP
+Vanin family	VNN
+Vesicle associated membrane proteins	VAMP
+Wiskott-Aldrich Syndrome protein family	
+Cadherins	
+Major cadherins	CDH
+Protocadherins	PCDH
+Clustered protocadherins	
+Non-clustered protocadherins	
+Cadherin related	CDHR
+Zinc fingers	
+ANP32 acidic nuclear phosphoproteins	ANP32
+Zinc fingers C2H2-type	ZNF
+Actin related protein 2/3 complex subunits	ARPC
+Acyl-CoA synthetase family	ACS
+Acyl-CoA thioesterases	ACOT
+SCAN domain containing	
+1-acylglycerol-3-phosphate O-acyltransferases	AGPAT
+ADAM metallopeptidase domain containing	ADAM
+ADAM metallopeptidases with thrombospondin type 1 motif	ADAMTS
+Adenylate cyclases	ADCY
+IZUMO family	IZUMO
+Ring finger proteins	RNF
+Tripartite motif family	TRIM
+Membrane associated ring-CH-type fingers	MARCHF
+Polycomb group ring fingers	PCGF
+Zinc fingers AN1-type	ZFAND
+Zinc fingers BED-type	ZBED
+THAP domain containing	THAP
+Zinc fingers C2HC-type	ZC2HC
+Nuclear hormone receptors	NR
+Zinc fingers CCCH-type	ZC3H
+Zinc fingers CCHC-type	ZCCHC
+Zinc fingers DBF-type	ZDBF
+Zinc fingers DHHC-type	ZDHHC
+Zinc fingers FYVE-type	ZFYVE
+GATA zinc finger domain containing	GATAD
+Zinc fingers HIT-type	ZNHIT
+Zinc fingers matrin-type	ZMAT
+Zinc fingers MIZ-type	ZMIZ
+Zinc fingers MYM-type	ZMYM
+Zinc fingers MYND-type	ZMYND
+PHD finger proteins	PHF
+Zinc fingers RANBP2-type 	ZRANB
+Zinc fingers SWIM-type	ZSWIM
+Zinc fingers ZZ-type	ZZZ
+Zinc fingers PARP-type	
+Zinc fingers CW-type	ZCW
+Ubiquitin like modifier activating enzymes	UBA
+Ubiquitin conjugating enzymes E2	UBE2
+Aminopeptidases	
+Yip1 domain containing	YIPF
+Y-box binding proteins	YBX
+Aminoacyl tRNA synthetases	
+Aminoacyl tRNA synthetases, Class I	
+Aminoacyl tRNA synthetases, Class II	
+Zinc fingers GRF-type	ZGRF
+Zinc fingers CXXC-type	CXXC
+Zinc fingers 3CxxC-type	Z3CXXC
+G protein-coupled receptors	
+G protein-coupled receptors, Class A rhodopsin-like	
+Olfactory receptors	OR
+Olfactory receptors, family 1	OR1
+Olfactory receptors, family 2	OR2
+Olfactory receptors, family 3	OR3
+Olfactory receptors, family 4	OR4
+Olfactory receptors, family 5	OR5
+Olfactory receptors, family 6	OR6
+Olfactory receptors, family 7	OR7
+Olfactory receptors, family 8	OR8
+Olfactory receptors, family 9	OR9
+Olfactory receptors, family 10	OR10
+WWC family	WWC
+Olfactory receptors, family 11	OR11
+Olfactory receptors, family 12	OR12
+Ligand gated ion channels	
+Olfactory receptors, family 13	OR13
+Olfactory receptors, family 14	OR14
+Olfactory receptors, family 51	OR51
+Olfactory receptors, family 52	OR52
+Olfactory receptors, family 55	OR55
+Olfactory receptors, family 56	OR56
+Amine receptors	
+Adrenoceptors	ADR
+5-hydroxytryptamine receptors, G protein-coupled	HTR
+5-hydroxytryptamine receptors	HTR
+5-hydroxytryptamine receptors, ionotropic 	HTR3
+Cholinergic receptors nicotinic subunits	CHRN
+Cholinergic receptors	
+Zinc activated channels	ZACN
+Ion channels	
+Voltage-gated ion channels	
+Sodium channels	
+Cholinergic receptors muscarinic	CHRM
+Dopamine receptors	DRD
+Calcium channels	
+Potassium channels	KCN
+Sodium voltage-gated channels	SCN
+Sodium channels epithelial	SCNN
+Cation channels sperm associated 	CATSPER
+Histamine receptors	HRH
+Trace amine receptors	TAAR
+Chemokine receptors	
+Complement component GPCRs	
+Formyl peptide receptors	FPR
+Glycoprotein hormone receptors	
+Hydroxycarboxylic acid receptors	HCAR
+Lipid like receptors	
+Cannabinoid receptors	CNR
+Free fatty acid receptors	FFAR
+Leukotriene receptors	
+Lysophosphatidic acid receptors	LPAR
+Sphingosine 1-phosphate receptors	S1PR1
+Prostaglandin receptors	
+Platelet activating factor receptor	PTAFR
+Melatonin receptors	MTNR
+Nucleotide like receptors	
+Adenosine receptors	ADORA
+Purinergic receptors	P2R
+P2Y receptors	P2RY
+Purinergic receptors P2X	P2RX
+Opsin receptors	OPN
+Prokineticin receptors	PROKR
+Relaxin family peptide receptors	RXFP
+Chemerin receptors	CMKLR
+F2R receptors	F2R
+Peptide receptors	
+Angiotensin receptors	AGTR
+Bombesin receptors	
+Bradykinin receptors	BDKR
+Cholecystokinin receptors	
+Endothelin receptors	EDNR
+Galanin receptors	GALR
+Gonadotropin releasing hormone receptors	GNRHR
+Hypocretin receptors	HCRTR
+Melanin concentrating hormone receptors	MCHR
+Melanocortin receptors	
+Neuromedin U receptors	NMUR
+Neuropeptide FF receptors	NPFFR
+Neuropeptide S receptor	NPSR
+Neuropeptides B and W receptors	NPBWR
+Neuropeptide Y receptors	
+Neurotensin receptors	NTSR
+Opioid receptors	OPR
+Two pore segment channels	TPCN
+Transient receptor potential cation channels	TRP
+Cyclic nucleotide gated channels	CNG
+Calcium voltage-gated channel subunits	CACN
+Hydrogen voltage gated channels	HVCN
+Potassium calcium-activated channels	
+Somatostatin receptors	SSTR
+Tachykinin receptors	TACR
+Arginine vasopressin and oxytocin receptors	AVPR
+G protein-coupled receptors, Class A orphans	
+G protein-coupled receptors, Class B secretin-like	
+Vasoactive intestinal peptide family receptors 	
+Calcitonin receptors	CALCR
+Corticotropin releasing hormone receptors	CRHR
+Glucagon receptor family	
+Parathyroid hormone receptors	
+Potassium voltage-gated channels	
+G protein-coupled receptors, Class C metabotropic glutamate/pheromone	
+Potassium inwardly rectifying channel subfamily J	KCNJ
+Potassium two pore domain channel subfamily K 	KCNK
+Chloride channels	
+Calcium sensing receptors	
+Gamma-aminobutyric acid type B receptor subunits	GABBR
+Glutamate metabotropic receptors	GRM
+Glutamate receptors	
+Sodium leak channels, non selective	NALCN
+Glutamate ionotropic receptors	GRI
+G protein-coupled receptors, Class C orphans	
+G protein-coupled receptors, Class F frizzled	FZD
+Ryanodine receptors	RYR
+Pannexins	PANX
+Taste receptors	
+Acid sensing ion channel subunits	ASIC
+Vomeronasal receptors	VN1R, VN2R
+Ion channels by channel type	
+Adiponectin receptors	ADIPOR
+Ion channels by gating mechanism	
+Inositol 1,4,5-triphosphate receptors	ITPR
+Chloride calcium-activated channels	
+Chloride voltage-gated channels	CLCN
+Porins	
+Aquaporins	AQP
+Voltage dependent anion channels	VDAC
+Chloride intracellular channels	CLIC
+Chloride channels, ATP-gated CFTR	CFTR
+7TM uncharacterized proteins	
+Gap junction proteins	GJ
+Receptor kinases	
+Receptor tyrosine kinases	
+Transmembrane guanylate cyclases	GUCY2
+Receptor serine/threonine kinase family	RSTK
+Type 1 receptor serine/threonine kinases	
+Type 2 receptor serine/threonine kinases	
+Immunoglobulins	IG
+Immunoglobulin heavy locus at 14q32.33	IGH
+Immunoglobulin heavy (IGH) orphons	
+Immunoglobulin kappa locus at 2p11.2	IGK
+Immunoglobulin kappa (IGK) orphons	
+Immunoglobulin lambda locus at 22q11.2	IGL
+Immunoglobulin lambda (IGL) orphons	
+Adenylate kinases	AK
+ARF GTPase family	
+Ras small GTPase superfamily	
+Wnt family	WNT
+WAP four-disulfide core domain containing	WFDC
+WD repeat domain containing	WDR
+UDP glucuronosyltransferases	UGT
+UBX domain containing	UBXN
+U-box domain containing	UBOX
+Ubiquitin specific peptidases	USP
+Vestigial like family	VGLL
+Variable charge X/Y family	VCX, VCY
+T cell receptors	TR
+T cell receptor alpha locus at 14q11.2	TRA
+T cell receptor beta locus at 7q34	TRB
+T cell receptor beta (TRB) orphons	
+T cell receptor delta locus at 14q11.2	TRD
+T cell receptor gamma locus at 7p14	TRG
+RAB, member RAS oncogene GTPases	RAB
+RAS type GTPase family	RAS
+Rho family GTPases	RHO
+RAN family GTPases	RAN
+Miro like atypical Rho GTPases	
+RAB like GTPases	RABL
+ArfGAPs	
+A-kinase anchoring proteins	AKAP
+Alcohol dehydrogenases	ADH
+Aldehyde dehydrogenases	ALDH
+Aldo-keto reductases	AKR
+Alkaline ceramidases	ACER
+Alkylation repair homologs	ALKBH
+Anaphase promoting complex 	ANAPC
+Ankyrin repeat domain containing	ANKRD
+Annexins	ANXA
+Apolipoproteins	APO
+Apolipoprotein B mRNA editing enzyme catalytic subunits	APOBEC
+Arachidonate lipoxygenases	ALOX
+Argonaute/PIWI family	
+Armadillo repeat containing	ARMC
+Sulfatases	ARS
+ATPases	
+AAA ATPases	ATAD
+P-type ATPases	
+V-type ATPase subunits	ATP6V
+ATP binding cassette transporters	ABC
+AT-rich interaction domain containing	ARID
+Baculoviral IAP repeat containing	BIRC
+Basic helix-loop-helix proteins	BHLH
+BEN domain containing	BEND
+Beta-1,3-glucuronyltransferases	B3GAT
+Glycosyltransferases	
+Beta 4-glycosyltransferases	
+Beta 3-glycosyltransferases	
+Glycosyl transferases group 1 domain containing	
+Glycosyltransferase family 2	
+Glycosyltransferase family 6	
+Dolichyl D-mannosyl phosphate dependent mannosyltransferases	
+Exostosin glycosyltransferase family	EXT
+Polypeptide N-acetylgalactosaminyltransferases	GALNT
+Fucosyltransferases	FUT
+Mannosyl-glycoprotein N-acetylglucosaminyltransferases	MGAT
+Glycosyltransferase family 8	
+Glycogen phosphorylases	PYG
+Sialyltransferases	
+Collagen beta(1-O)galactosyltransferases	COLGALT
+UDP-glucose glycoprotein glucosyltransferases	UGGT
+Glucosaminyl (N-acetyl) transferases/xylosyltransferases	GCNT, XYLT
+Alpha 1,4-glycosyltransferases	
+Glycosyltransferase family 90	POGLUT
+STT3 oligosaccharyltransferase catalytic subunits	STT3
+Oligosaccharyltransferase complex subunits	OST
+O-linked N-acetylglucosaminyltransferases	
+Alpha-1,3-glucosyltransferases	
+Alpha-1,2-glucosyltransferases	ALG10
+UDP-N-acetylglucosaminyltransferase subunits	
+UDP-glucose ceramide glucosyltransferases	
+Biogenesis of lysosomal organelles complex 1 subunits	BLOC1S
+Blood group antigens	
+Bone morphogenetic proteins	BMP
+BPI fold containing	BPIF
+BRICHOS domain containing	BRICD
+Butyrophilins	BTN
+S100 calcium binding proteins	S100
+Carbonic anhydrases	CA
+Carboxylesterases	CES
+Paraoxonases	PON
+Lipases	LIP
+Arylacetamide deacetylase family	AADAC
+Patatin like phospholipase domain containing	PNPLA
+Phospholipases	
+Caspases	CASP
+Cas scaffold proteins	CASS
+Cathepsins	CTS
+CD molecules	CD
+Cyclins	CCN
+Non-coding RNAs	
+MicroRNAs	MIR
+Transfer RNAs	TR
+CDC like kinases	CLK
+CDGSH iron sulfur domain containing	CISD
+Charged multivesicular body proteins	CHMP
+Chemokine ligands	CCL
+Chromatin modifying enzymes	
+Lysine demethylases	KDM
+Lysine acetyltransferases	KAT
+Lysine methyltransferases	KMT
+Claudins	CLDN
+Coiled-coil-helix-coiled-coil-helix domain containing proteins	CHCHD
+Collagens	COL
+Collectins	COLEC
+Complement system	
+Components of oligomeric golgi complex	COG
+Coronins	CORO
+Cyclin dependent kinases	CDK
+Cytochrome b561	CYB561
+DDB1 and CUL4 associated factors	DCAF
+DEAD-box helicases	DDX
+DEAH-box helicases	DHX
+Defensins	
+Defensins, alpha	DEFA
+Defensins, beta	DEFB
+DENN domain containing	DENND
+Dishevelled segment polarity proteins	DVL
+Basic leucine zipper proteins	
+Forkhead boxes	FOX
+High mobility group	HMG
+Canonical high mobility group	
+Non-canonical high mobility group	
+Homeoboxes	
+ANTP class homeoboxes	
+HOXL subclass homeoboxes	
+NKL subclass homeoboxes and pseudogenes	
+PRD class homeoboxes and pseudogenes	
+LIM class homeoboxes	
+POU class homeoboxes and pseudogenes	POU
+HNF class homeoboxes	
+SINE class homeoboxes	SIX
+TALE class homeoboxes and pseudogenes	
+CUT class homeoboxes and pseudogenes	
+PROS class homeoboxes	PROX
+ZF class homeoboxes and pseudogenes	
+CERS class homeoboxes	CERS
+Myb/SANT domain containing	
+Helix-turn-helix CENPB type domain containing	
+ETS transcription factor family	
+DNA polymerases	POL
+Dyneins, axonemal	DNA
+Dyneins	
+Dyneins, cytoplasmic	DYN
+Elongator acetyltransferase complex 	ELP
+EMI domain containing	
+Receptor ligands	
+Engulfment and cell motility proteins	ELMO
+Exonucleases	
+Ephrins	EFN
+Exportins	XPO
+FA complementation groups	FANC
+Fatty acid binding protein family	FABP
+Fatty acid hydroxylase domain containing	
+Fatty acid desaturases	FADS
+Fibrinogen C domain containing	
+Fibronectin type III domain containing	
+Fibulins	FBLN
+F-boxes	FBX
+F-box and leucine rich repeat proteins	FBXL
+F-box and WD repeat domain containing	FBXW
+F-boxes other	FBXO
+Fermitins	FERMT
+Gamma-aminobutyric acid (GABA) receptors	
+Gamma-aminobutyric acid type A receptor subunits	GABR
+Gamma-glutamyltransferases	GGT
+General transcription factors	GTF
+Soluble glutathione S-transferases	GST
+Glycerol kinases	GK
+Proteoglycans	
+Syndecans	SDC
+Glypicans	GPC
+Small leucine rich repeat proteoglycans	
+Hyalectan proteoglycans	
+Collagen proteoglycans	
+GPN-loop GTPases	GPN
+G-patch domain containing	GPATCH
+GTPases, IMAP	GIMAP
+HAUS augmin like complex 	HAUS
+Heat shock proteins	
+Heat shock 70kDa proteins	HSPA
+DNAJ (HSP40) heat shock proteins	DNAJ
+Small heat shock proteins	HSPB
+Heat shock 90kDa proteins	HSP90
+Chaperonins	
+Histocompatibility complex	HLA
+Immunoglobulin superfamily domain containing	
+V-set domain containing	
+C1-set domain containing	
+C2-set domain containing	
+I-set domain containing	
+Immunoglobulin like domain containing	
+INO80 complex 	INO80
+Importins	IPO
+Integrins	ITG
+Interferons	IFN
+Interferon receptors	
+Interleukins	IL
+Interleukin receptors	
+Intermediate filaments	
+Keratins, type I	
+Keratins, type II	
+Intermediate filaments Type III	
+Intermediate filaments Type IV	
+Lamins	LMN
+Beaded filament structural proteins	BFSP
+Intermediate filament family orphans	IFFO
+Intraflagellar transport complexes	
+Kallikreins	KLK
+Kelch like	KLHL
+Keratin associated proteins	KRTAP
+Killer cell immunoglobulin like receptors	KIR
+Killer cell lectin like receptors	KLR
+Kinesins	KIF
+KN motif and ankyrin repeat domain containing	KANK
+Kruppel like factors	KLF
+La ribonucleoproteins	LARP
+Laminin subunits	LAM
+Late cornified envelope proteins	LCE
+Latent transforming growth factor beta binding proteins	LTBP
+Galectins	LGALS
+Leukocyte immunoglobulin like receptors	LILR
+Lipocalins	LCN
+Calycin structural superfamily	
+Low density lipoprotein receptors	LRP
+LYR motif containing	LYRM
+Maestro heat like repeat containing 	MROH
+MAX dimerization proteins	MXD
+Metallothioneins	MT
+Mitochondrial respiratory chain complexes	
+Mitochondrial complex I: NADH:ubiquinone oxidoreductase subunits	
+Mitochondrial complex II: succinate dehydrogenase subunits	SDH
+Mitochondrial complex III: ubiquinol-cytochrome c reductase complex subunits	UQCR
+Mitochondrial complex IV: cytochrome c oxidase subunits	COX, MT-CO
+Mitochondrial complex V: ATP synthase subunits	ATP5, MT-ATP
+Mitochondrial respiratory chain complex assembly factors	
+Mitochondrial ribosomal proteins	
+MOB kinase activators	MOB
+Mucins	MUC
+Myocyte enhancer factor 2 proteins	MEF2
+Mitogen-activated protein kinases	MAPK
+Mitogen-activated protein kinase cascade	
+Mitogen-activated protein kinase kinases	MAP2K
+Mitogen-activated protein kinase kinase kinases	MAP3K
+Mitogen-activated protein kinase kinase kinase kinases	MAP4K
+Myosin heavy chains	
+Myosin light chains	MYL
+Myosin binding proteins	MYBP
+Na+/K+ transporting ATPase interacting	NKAIN
+N-alpha-acetyltransferase subunits	NAA
+Netrins	NTN
+NBPF members	NBPF
+N-terminal EF-hand calcium binding proteins	NECAB
+NOP2/Sun RNA methyltransferase family	NSUN
+Nuclear factors of activated T-cells 	NFAT
+NLR family	NLR
+Nudix hydrolase family	NUDT
+ORAI calcium release-activated calcium modulators	ORAI
+OTU domain containing	OTU
+Oxysterol binding proteins	OSBP
+Paraneoplastic Ma antigens	PNMA
+Parvins	PARV
+PATE family	PATE
+Paired boxes	PAX
+Pellino E3 ubiquitin protein ligases	PELI
+Peptidyl arginine deiminases	PADI
+Perilipins	PLIN
+Phosphatase and actin regulators	PHACTR
+Phosphatidylinositol glycan anchor biosynthesis	PIG
+Phosphodiesterases	PDE
+Pleckstrin homology domain containing	PLEKH
+Plexins	PLXN
+Poly(ADP-ribose) polymerases	PARP
+POTE ankyrin domain containing	POTE
+PRAME family	PRAMEF
+Prenyltransferase alpha subunit repeat containing	PTAR
+Proteasome	PSM
+Protein disulfide isomerases	PDI
+Protein phosphatase catalytic subunits	PPP
+Protein phosphatase 1 regulatory subunits	PPP1R
+Protein phosphatase 2 regulatory subunits	PPP2R
+Protein phosphatase 3 regulatory subunits	PPP3R
+Protein phosphatase 4 regulatory subunits	PPP4R
+Protein phosphatase 6 regulatory subunits	PPP6R
+Protein phosphatases, Mg2+/Mn2+ dependent	PPM
+HAD Asp-based protein phosphatases	
+Protein phosphatases	
+Class I classical Cys-based phosphatases	
+Dual specificity phosphatases	DUSP
+Class II Cys-based phosphatases	
+Class III Cys-based CDC25 phosphatases	CDC25
+Pseudoautosomal regions	
+Pseudoautosomal region 1	PAR1
+Pseudoautosomal region 2	PAR2
+Receptor accessory proteins	REEP
+Receptor (G protein-coupled) activity modifying proteins	RAMP
+Receptor transporter proteins	RTP
+Regulators of G-protein signaling	RGS
+Rho GTPase activating proteins	ARHGAP
+Dbl family Rho GEFs	ARHGEF
+Ribonuclease A family	RNASE
+RNA binding motif containing	RBM
+RNA polymerase subunits	POLR
+RNA pseudouridylate synthase domain containing	RPUSD
+S ribosomal proteins	RPS
+L ribosomal proteins	RPL
+SAM and SH3 domain containing	SASH
+Septins	SEPTIN
+Secreted frizzled-related proteins	SFRP
+Secretoglobins	SCGB
+Secretory carrier membrane proteins	SCAMP
+Semaphorins	SEMA
+Serine and arginine rich splicing factors	SRSF
+Serine proteases	PRSS
+Serpin peptidase inhibitors	SERPIN
+Serine peptidase inhibitors, Kazal type	SPINK
+SH2 domain containing	
+Shisa family members	SHISA
+Short chain dehydrogenase/reductase superfamily	SDR
+Sialic acid binding Ig like lectins	SIGLECs
+Sideroflexin family	SFXN
+Signal regulatory proteins	SIRP
+SKI transcriptional corepressors	
+SMAD family	SMAD
+Small G protein signaling modulators	SGSM
+Solute carriers	SLC
+Sorting nexins	SNX
+Sp transcription factors	SP
+Speedy/RINGO cell cycle regulator family	SPDY
+SRY-box transcription factors	SOX
+StAR related lipid transfer domain containing	STARD
+Sterile alpha motif domain containing	SAMD
+Structural maintenance of chromosomes proteins	SMC
+Sulfotransferases, cytosolic	SULT
+Sulfotransferases, membrane bound	
+Suppressors of cytokine signaling	SOCS
+Synaptotagmins	SYT
+T-box transcription factors	TBX
+Tectonic proteins	TCTN
+Tetraspanins	TSPAN
+Tetratricopeptide repeat domain containing	TTC
+THO complex	THOC
+Trafficking protein particle complex subunits	TRAPPC
+Transglutaminases	TGM
+Transmembrane and coiled-coil domain containing	TMCC
+tRNA-splicing endonuclease subunits	TSEN
+Tropomyosins	TPM
+Tubulins	TUB
+Tubulin tyrosine ligase family	TTL
+Tudor domain containing	TDRD
+Tumor necrosis factor superfamily	TNFSF
+Tumor necrosis factor receptor superfamily	TNFRSF
+Ubiquilin family	UBQLN
+Ubiquitin protein ligase E3 component n-recognins	UBR
+Long non-coding RNAs	
+Adhesion G protein-coupled receptors	ADGR
+ATP binding cassette subfamily A	ABCA
+ATP binding cassette subfamily B	ABCB
+ATP binding cassette subfamily C	ABCC
+ATP binding cassette subfamily D	ABCD
+ATP binding cassette subfamily E	ABCE
+ATP binding cassette subfamily F	ABCF
+ATP binding cassette subfamily G	ABCG
+Protein tyrosine phosphatases non-receptor type	PTPN
+Protein tyrosine phosphatases receptor type	PTPR
+Serine/threonine phosphatases	
+Chitinases	CHI
+Exosome complex	EXOSC
+Syntaxins	STX
+Guanylate cyclases	GUCY
+Soluble guanylate cyclases	GUCY1
+Sulfotransferases	
+Synaptotagmin like tandem C2 proteins	
+C2 domain containing	
+Multiple C2 and transmembrane domain containing	MCTP
+Extended synaptotagmins	ESYT
+Ferlin family	FER1L
+Copines	CPNE
+C2 and RasGAP domain containing	
+Phosphatidylinositol 3-kinase subunits	PIK3C
+C2 domain containing phospholipases	
+Regulating synaptic membrane exocytosis family	RIMS
+C2 domain containing protein kinases	
+UNC13 homologs	UNC13
+C2 tensin-type domain containing	
+C2 and WW domain containing	
+Nuclear-encoded mitochondrial transfer RNAs	NMTR
+Cytoplasmic transfer RNAs	TR
+Mitochondrially encoded transfer RNAs	MT-T
+Small nucleolar RNAs	
+Small nucleolar RNAs, C/D box	SNORD
+Small nucleolar RNAs, H/ACA box	SNORA
+Small Cajal body-specific RNAs	SCARNA
+Ribosomal RNAs	
+Small nuclear RNAs	
+Piwi-interacting RNA clusters	PIRC
+Vault RNAs	VTRNA
+RNAs, Ro60-associated Y	RNY
+Potassium sodium-activated channel subfamily T 	KCNT
+Potassium calcium-activated channel subfamily M regulatory beta subunits	KCNMB
+Potassium voltage-gated channel regulatory subunits	
+BTB domain containing	BTBD
+Cytochrome P450s	CYP
+EF-hand domain containing	
+Histones	
+Anoctamins	ANO
+Bestrophins	BEST
+Chloride channel accessory	CLCA
+Glycine receptors	GLRA, GLRB
+Minor histocompatibility antigens	
+Homer scaffold proteins 	HOMER
+Immunoglobulin heavy	IGH
+Immunoglobulin kappa	IGK
+Immunoglobulin lambda	IGL
+T cell receptor beta	TRB
+Selenoproteins	SELENO
+M10 matrix metallopeptidases	MMP
+Tissue inhibitor of metallopeptidases	TIMP
+Astacins	
+MAP kinase phosphatases	
+Atypical dual specificity phosphatases	
+Pappalysins	PAPPA
+Slingshot protein phosphatases	SSH
+Protein tyrosine phosphatase 4A family	PTP4A
+CDC14 phosphatases	
+Metzincin metallopeptidases	
+PTEN protein phosphatases	
+Myotubularins	MTM
+Membrane associated guanylate kinases	
+Angiopoietin like family	ANGPTL
+CEA cell adhesion molecule family	CEACAM
+CTAGE family	CTAGE
+Transferrins	
+Cyclophilin peptidylprolyl isomerases	PPI
+FKBP prolyl isomerases	FKBP
+Adhesion G protein-coupled receptors, subfamily A	ADGRA
+Adhesion G protein-coupled receptors, subfamily B	ADGRB
+Adhesion G protein-coupled receptors, subfamily C	ADGRC
+Adhesion G protein-coupled receptors, subfamily D	ADGRD
+Adhesion G protein-coupled receptors, subfamily E	ADGRE
+Adhesion G protein-coupled receptors, subfamily F	ADGRF
+Adhesion G protein-coupled receptors, subfamily G	ADGRG
+Adhesion G protein-coupled receptors, subfamily L	ADGRL
+Adhesion G protein-coupled receptors, subfamily V	ADGRV
+Parvulins	PIN
+Immunophilins	
+Peptidylprolyl isomerases	
+Granins	SCG
+Rhomboid family	RHB
+VPS9 domain containing	
+Actins	ACT
+Progestin and adipoQ receptor family	PAQR
+GINS complex	GINS
+COP9 signalosome 	COPS
+G protein-coupled bile acid receptor	GPBAR
+G protein-coupled estrogen receptor	GPER
+Oxoglutarate receptor	OXGR
+Succinate receptor	SUCNR
+Histone deacetylase superfamily	HDAC, SIRT
+Sirtuins	SIRT
+Plakins	
+Hemoglobin subunits	HB
+Dynactin subunits	DCTN
+Selectins	SEL
+ENAH/VASPs	
+ADAMTS like	ADAMTSL
+Toll like receptors	TLR
+Tektins	TEKT
+Gelsolin/villins	
+Erythrocyte membrane protein band 4.1	EPB41
+SNAP complex 	SNAPC
+Peroxiredoxins	PRDX
+Phospholipid scramblases	PLSCR
+XK related family	XKR
+Prefoldin subunits	PFDN
+Peroxins	PEX
+Membrane spanning 4-domains	MS4
+Caspase recruitment domain containing	CARD
+Origin recognition complex 	ORC
+NME/NM23 family	NME
+Cystatin superfamily	
+Cystatins, type 2	CST
+Cystatins, type 1	CST
+Cystatins, type 3	
+Cystatins, type 4	
+Histatins and statherin	HTN
+Proline rich proteins 	PRB, PRH
+Proprotein convertase subtilisin/kexin family	PCSK
+Acyl-CoA dehydrogenase family	ACAD
+Calpains	CAPN
+Chromobox family	CBX
+CKLF like MARVEL transmembrane domain containing	CMTM
+COMM domain containing	COMMD
+Dynein regulatory complex	DRC
+E2F transcription factors	E2F
+Desumoylases	
+SUMO specific peptidases	SENP
+Desumoylating isopeptidases	DESI
+Transcription factor Dp family	TFDP
+Ubiquitin specific peptidase like 	USPL
+Histone deacetylases, class I	HDAC
+Histone deacetylases, class II	HDAC
+Histone deacetylases, class IV	HDAC
+Histone deacetylases, class IIA	HDAC
+Histone deacetylases, class IIB	HDAC
+Pyrin domain containing	
+Pyrin and HIN domain family	PYHIN
+Deubiquinating enzymes	
+MJD deubiquinating enzymes	
+Ubiquitin C-terminal hydrolases	UCHL
+JAMM/MPN+ metallopeptidase family	
+Cytochrome P450 family 1	CYP1
+Cytochrome P450 family 2	CYP2
+Cytochrome P450 family 3	CYP3
+Cytochrome P450 family 4	CYP4
+Cytochrome P450 family 5	CYP5
+Cytochrome P450 family 7	CYP7
+Cytochrome P450 family 8	CYP8
+Cytochrome P450 family 11	CYP11
+Cytochrome P450 family 17	CYP17
+Cytochrome P450 family 19	CYP19
+Cytochrome P450 family 20	CYP20
+Cytochrome P450 family 21	CYP21
+Cytochrome P450 family 24	CYP24
+Cytochrome P450 family 26	CYP26
+Cytochrome P450 family 27	CYP27
+Cytochrome P450 family 39	CYP39
+Cytochrome P450 family 46	CYP46
+Cytochrome P450 family 51	CYP51
+Death effector domain containing	
+Death associated protein kinases	DAPK
+Autophagy related	ATG
+CCR4-NOT transcription complex	CNOT
+DNA glycosylases	
+Methyl-CpG binding domain containing	MBD
+MutS homologs	MSH
+MutL homologs	MLH
+Cytosolic iron-sulfur assembly components	
+Paf1/RNA polymerase II complex 	
+Golgi associated, gamma adaptin ear containing, ARF binding proteins	GGA
+Cullins	CUL
+SCY1 like pseudokinases	SCYL
+SMC5-6 protein complex	
+Glycerol-3-phosphate acyltransferases	GPAT
+Membrane bound O-acyltransferase family	MBOAT
+Biogenesis of lysosomal organelles complex 2 	BLOC2S
+Biogenesis of lysosomal organelles complex 3 	BLOC3S
+Ragulator complex 	LAMTOR
+CTD family phosphatases	
+5'-nucleotidases	NT5
+Lipins	LPIN
+EYA transcriptional coactivator and phosphatases	EYA
+HAD Asp-based non-protein phosphatases	
+Cellular communication network factors	
+BLOC-1 related complex subunits	BORCS
+RecQ like helicases	RECQL
+Topoisomerases	TOP
+Nucleoporins	NUP
+IgLON cell adhesion molecules	IGLON
+14-3-3 phospho-serine/phospho-threonine binding proteins	YWHA
+Ribosomal proteins	
+Exocyst complex	EXOC
+TNF receptor associated factors	TRAF
+BCL2 family	BCL2
+ATAC complex	ATAC
+SAGA complex	
+Cohesin complex	
+Mediator complex	MED
+GOLD domain containing	
+SEC14 family	SEC14
+Transmembrane p24 trafficking proteins	TMED
+Insulin like growth factor binding proteins	IGFBP
+Lipid phosphatases	
+Phospholipid phosphatases	PLPP
+Sphingosine-1-phosphate phosphatases	SGPP
+Acid phosphatases	ACP
+Alkaline phosphatases	ALP
+Sugar phosphatases	
+Glucose 6-phosphatases, catalytic	G6PC
+Fructose-1,6-bisphosphatases	FBP
+Phosphatases	
+6-phosphofructo-2-kinases/fructose-2,6-biphosphatases	PFKFB
+Phosphoglycerate mutases	PGAM
+Phosphoinositide phosphatases	
+Bisphosphoglycerate phosphatases	
+HAD Asp-based phosphatases	
+Golgins	
+MCM family	MCM
+MADS box family	
+LEM domain containing	LEMD
+Spindlin family	SPIN
+Atypical chemokine receptors	ACKR
+C-C motif chemokine receptors	CCR
+X-C motif chemokine receptors	XCR
+C-X-3-C motif chemokine receptors	CX3CR
+C-X-C motif chemokine receptors	CXCR
+EPH receptors	EPH
+Erb-b2 receptor tyrosine kinases	ERBB
+Myosin heavy chains, class I	MYO1
+Myosin heavy chains, class II	MYH
+Myosin heavy chains, class III	MYO3
+Myosin heavy chains, class V	MYO5
+Myosin heavy chains, class VI	MYO6
+Myosin heavy chains, class VII	MYO7
+Myosin heavy chains, class IX	MYO9
+Myosin heavy chains, class X	MYO10
+Myosin heavy chains, class XV	MYO15
+Myosin heavy chains, class XVI	MYO16
+Myosin heavy chains, class XVIII	MYO18
+Myosin heavy chains, class XIX	MYO19
+Keratins	KRT
+Schlafen family	SLFN
+ESCRT complexes	
+Actinins	ACTN
+Spectrins	SPT
+Flotillins	FLOT
+ESCRT-0	
+ESCRT-I	
+ESCRT-II	
+ESCRT-III	
+ESCRT-III associated factors	
+ESCRT-IV	
+Eukaryotic translation initiation factor 3	EIF3
+BBSome	
+SNAREs	
+Xeroderma pigmentosum complementation groups	XP
+Phospholipid phosphatase superfamily	
+Phospholipid phosphatase related	PLPPR
+Yippee like family	YPEL
+Gemins	GEMIN
+N-acetyltransferases	NAT
+Arylamine N-acetyltransferases	
+GCN5 related N-acetyltransferases	
+Transmembrane channel like family	TMC
+MAGE family	MAGE
+Stathmins	STMN
+BAG cochaperones	BAG
+Tropomodulins	TMOD
+Pentraxins	PTX
+Long pentraxins	
+Short pentraxins	
+YIP family	
+AF4/FMR2 family	AFF
+GRAM domain containing	GRAM
+PWWP domain containing	PWWP
+NADH:ubiquinone oxidoreductase core subunits	NDUF, MT-ND
+NADH:ubiquinone oxidoreductase supernumerary subunits	NDUF
+Phosphatidylinositol transfer proteins	PITPN
+Regulatory factor X family	RFX
+MAPK activated protein kinases	MAPKAPK
+RAF family	
+Volume regulated anion channel subunits	LRRC8
+Integrin beta subunits	ITGB
+Integrin alpha subunits	ITGA
+Taste 1 receptors	TAS1R
+Taste 2 receptors	TAS2R
+LIM zinc finger domain containing	LIMS
+CDC42 effector proteins	CDC42EP
+CCAAT/enhancer binding proteins 	CEBP
+Helicases	
+DNA helicases	
+RNA helicases	
+UPF1 like RNA helicases	
+SCF complex	
+Lysozymes	LY
+Lysozymes, g-type	LYG
+Lysozymes, c-type	LYZ
+Growth hormone family	
+Diacylglycerol kinases	DGK
+Sushi domain containing	
+Myosin phosphatase targeting family	MYPT
+Activating leukocyte immunoglobulin like receptors	LILRA
+Inhibitory leukocyte immunoglobulin like receptors	LILRB
+TEA domain transcription factors	TEAD
+Prickle planar cell polarity proteins	PRICKLE
+Type I classical cadherins	CDH
+Type II classical cadherins	CDH
+7D cadherins	
+Desmosomal cadherins	DSC, DSG
+CELSR cadherins	CELSR
+Mannosidases	
+Mannosidases type alpha	
+Mannosidases alpha class 1	MAN1
+Mannosidases alpha class 2	MAN2
+Mannosidases endo-alpha	MANEA
+Mannosidases type beta	MANBA
+PR/SET domain family	PRDM
+Ras association domain family	RASSF
+Glutamate ionotropic receptor kainate type subunits	GRIK
+Glutamate ionotropic receptor AMPA type subunits	GRIA
+Glutamate ionotropic receptor NMDA type subunits	GRIN
+Glutamate ionotropic receptor delta type subunits	GRID
+Sodium voltage-gated channel alpha subunits	
+Sodium voltage-gated channel beta subunits	
+DASH family	
+ATPase Na+/K+ transporting subunits	ATP1
+ATPases Ca2+ transporting	ATP2
+ATPase phospholipid transporting	
+ATPase H+/K+ transporting	
+ATPase copper transporting	ATP7
+ATPase orphan transporters	ATP13
+Transmembrane BAX inhibitor motif containing	TMBIM
+Transcription elongation factor A like family	TCEAL
+Brain expressed X-linked family	BEX
+LIM domain containing	
+Troponin complex subunits	TNN
+PDZ domain containing	PDZ
+H/ACA ribonucleoprotein complex	NOLA
+Crumbs complex	
+Scribble complex	
+UTPb subcomplex	
+LY6/PLAUR domain containing	LYPD
+Phospholipase A and acyltransferase family	PLAAT
+Translocase of outer mitochondrial membrane complex	TOMM
+BEACH domain containing 	
+Bromodomain and extra-terminal domain family	
+Bromodomain containing	BRD
+MRH domain containing 	
+C3 and PZP like, alpha-2-macroglobulin domain containing	CPAMD
+Diacylglycerol O-acyltransferase 2 family	DGAT2
+ASAP complex	
+Exon junction complex	
+Transmembrane 9 superfamily members	TM9SF
+Tubulin polymerization promoting proteins	TPPP
+Arrestins	ARR
+EMSY complex	
+USH2 complex 	
+DAN family	DAND
+DNA ligases	LIG
+PAR bZIP family	
+Proline rich and Gla domain containing	PRRG
+Gla domain containing	
+Spectrin repeat containing nuclear envelope family	SYNE
+Scavenger receptors	SCAR
+NF-kappa B complex subunits	
+Sm spliceosomal proteins	SNRP
+Fos transcription factor family	FOS
+Jun transcription factor family	JUN
+AP-1 transcription factor 	
+SNAG transcriptional repressors	
+RGK type GTPase family	
+Zinc fingers C2H2C-type	
+MBT domain containing	
+Interleukin 6 type cytokine family	
+Protein phosphatase 2 modulatory subunits	
+Protein phosphatase 2 scaffold subunits	PPP2R1
+VEGF family	VEGF
+ERCC excision repair associated	ERCC
+Nucleotide excision repair	
+Signal transduction and activation of RNA metabolism family	KHDRBS
+Transcription and export complex 2	
+BCL2 homology region 3 (BH3) only	
+SPARC family	
+SIBLING family	
+Super elongation complex	
+P-TEFb complex subunits	
+Membrane associated progesterone receptor family	
+YEATS domain containing	
+NudC family	NUDC
+I-BAR domain containing	
+F-BAR domain containing 	
+N-BAR domain containing	
+PX-BAR domain containing	
+BAR-PH domain containing	
+AH/BAR superfamily	
+FERM domain containing	
+SPOUT methyltransferase domain containing	
+PRELI domain containing	PRELID
+TIR domain containing	
+C-type lectin domain containing	CLEC
+BCH domain containing 	
+MIA family	MIA
+Large ribosomal subunit biogenesis complex	
+Adenosine deaminase family	
+Adenosine deaminases acting on RNA	ADA
+NuRD complex subunits	
+SIN3 histone deacetylase complex subunits	
+BTG/Tob family	
+Alpha arrestins	ARRDC
+Classical arrestins	ARR
+KEOPS complex	
+Leucine zipper tumor suppressor family	LZTS
+Pregnancy specific glycoproteins	PSG
+Nuclear exosome targeting complex	
+Carcinoembryonic antigen family	
+Non-canonical poly(A) polymerases	
+TTT complex	
+M14 carboxypeptidases	CP
+MIS12 kinetochore complex	
+STEAP family	STEAP
+Synapsins	SYN
+Cavins	CAVIN
+BRCA1 A complex	
+SRCAP complex	
+casein kinase 1 family	CSNK
+WASH complex	
+MTOR complex 1	
+MTOR complex 2	
+Shelterin complex	
+BRCA1 B complex	
+BRCA1 C complex	
+TIM22 complex	
+Chromosomal passenger complex	
+Checkpoint clamp complex	
+Ripoptosome	
+Apoptosome	
+Death inducing signaling complex 	
+CST complex	
+MRN complex	
+tRNA splicing ligase complex	
+JmjC hydroxylases	
+Polycomb repressive complex 2	
+Transcription and export complex 1 subunits	
+S100 fused type protein family	
+Cornified envelope precursor family	
+Small proline rich proteins	SPRR
+Epidermal differentiation complex	
+Cysteine rich secretory protein family	CRISP
+CAP superfamily	
+GLIPR family 	GLIPR
+Beta-gamma crystallins	
+Beta-gamma crystallin domain containing	
+NineTeen complex	
+NURF complex	
+Integrator complex	INTS
+Iron (II) and 2-oxoglutarate dependent oxygenases	
+Doublecortin superfamily	DCDC
+STRIPAK complex	
+C1q and TNF related 	C1QTNF
+Hedgehog signaling molecule family	
+TLC domain containing	
+BRISC complex	
+MINDY deubiquitinases	MINDY
+Haloacid dehalogenase like hydrolase domain containing	HDHD
+Mitochondrially encoded ribosomal RNAs	MT-RNR
+Cytoplasmic ribosomal RNAs	
+5S ribosomal RNAs	RNA5S
+Ribosomal 45S RNA clusters	RNR
+45S pre-ribosomal RNAs	RNA45S
+18S ribosomal RNAs	RNA18S
+5.8S ribosomal RNAs	RNA5-8S
+28S ribosomal RNAs	RNA28S
+Mitochondrial complex I assembly complex	
+Src family tyrosine kinases	
+Linear ubiquitin chain assembly complex 	
+RBR E3 ubiquitin ligases	
+Elongin complex	ELO
+KICSTOR complex	
+GATOR1 subcomplex	
+GATOR2 subcomplex	
+GATOR complex	
+Peptidoglycan recognition proteins	PGLYRP
+Methyltransferase families	
+SET domain containing	SET
+Seven-beta-strand methyltransferase motif containing	
+R2TP complex	
+Zyxin family	
+Ajuba family	
+Scavenger receptor cysteine rich domain containing	
+CBM complex	
+RELT family	REL
+Myocardin family	
+Glutamine amidotransferase class 1 domain containing	GATD
+Retrotransposon Gag like	RTL
+Ig-like cell adhesion molecule family	
+Gag like LTR retrotransposon derived genes	
+Envelope ERV derived genes	
+Glycoside hydrolase family 31	
+IgCAM CXADR-related subfamily	
+DNA transposon derived genes	
+Transposable element derived genes	
+Heparin binding growth factor family	
+m6A methyltransferase complex	
+WTAP complex	
+ROCO family	ROCO
+Endosome-associated recycling protein (EARP) complex	
+Golgi associated retrograde protein (GARP) complex	
+G protein subunits alpha	GNA
+G protein subunits alpha, group s	
+G protein subunits alpha, group q	
+G protein subunits alpha, group i	GNAI
+G protein subunits alpha, group 12/13	
+G protein subunits beta	GNB
+Heterotrimeric G proteins	
+G protein subunits gamma	GNG
+Actin related proteins	
+M1 metallopeptidases	
+M3 metallopeptidase family	
+M13 metallopeptidases	
+M16 metallopeptidases	
+M24 metallopeptidase family	
+M20 metallopeptidases	
+M28 metallopeptidases	
+M19 metallopeptidases	
+M38 metallopeptidases	
+Hyaluronidases	HYAL
+Cleavage stimulation factor subunits	CSTF
+Cleavage and polyadenylation specific factor subunits	
+Kleisins	
+Condensin I subunits	
+Condensin II subunits	
+Condensin subunits	
+Ferritin subunits	
+Tec family tyrosine kinases	
+Non-receptor tyrosine kinases	
+Jak family tyrosine kinases	JAK
+Csk family tyrosine kinases	
+Fes family tyrosine kinases	
+Abl family tyrosine kinases	ABL
+Syk family tyrosine kinases	
+Nucleoredoxin family	NXN
+Glutaredoxin domain containing	GLRX
+Microsomal glutathione S-transferases	MGST
+Glutathione S-transferases	
+Tetraspan junctional complex superfamily	
+Clarins	CLRN
+Tetraspan vesicle membrane proteins	
+Synaptogyrins	SYNGR
+Synaptophysins	SYP
+eNoSC complex	
+Calcium homeostasis modulators	CALHM
+MSL histone acetyltransferase complex	
+NSL histone acetyltransferase complex	
+UTPa subcomplex	
+SSU processome	
+U3 small nucleolar ribonucleoprotein	
+MPP10 subcomplex	
+CAP and C-type lectin domain containing	CLEC18
+LHFPL tetraspan proteins	LHFPL
+UTPc subcomplex	
+Cilia and flagella associated	CFAP
+Armadillo like helical domain containing	ARMH
+Clathrin/coatomer adaptor, adaptin-like, N-terminal domain containing	
+Pumilio homology domain containing	PUM
+TOG domain containing	
+TSC complex	
+NTC associated proteins	
+U1 small nuclear ribonucleoprotein	
+SMN complex	
+U2 small nuclear ribonucleoprotein 	
+U4/U6 small nuclear ribonucleoprotein 	
+U5 small nuclear ribonucleoprotein	
+Spliceosomal A complex	
+LSm proteins	LSM
+tri-snRP complex	
+Spliceosomal B complex	
+Spliceosomal Bact complex	
+Spliceosomal C complex	
+Calcium channel auxiliary gamma subunits	CACNG
+Calcium voltage-gated channel alpha1 subunits	CACNA1
+Calcium voltage-gated channel auxiliary alpha2delta subunits	CACNA2D
+Calcium voltage-gated channel auxiliary beta subunits	CACNB
+Spliceosomal P complex	
+SF3b complex	
+Major spliceosome	
+Minor spliceosome	
+U11/U12 di-snRNP	
+Spliceosomal E complex	
+Ribosomal 45S rRNA genes outside of clusters	
+Gasdermins	GSDM
+VPS-C complexes	
+HOPS complex	VPS
+CORVET complex	
+Mitochondrial RNase P complex	
+B9 domain containing	
+DOCK family Rho GEFs	DOCK
+NT-C2 domain containing	
+FASTK mitochondrial RNA binding family	FASTK
+p120 catenin family	
+Catenins	
+Plakophilins	PKP
+Beta catenins	CTNNB
+Alpha catenins	CTNNA
+Delta catenins	
+MKS complex	
+NPHP complex	
+Pyruvate dehydrogenase complex	PDH
+TCF/LEF transcription factor family	
+TIM23 complex	
+SF3a complex	SF3A
+Retriever complex	
+CCC complex	
+WRAD complex	
+Ski2 like RNA helicases	
+CTLH complex	
+NSP adaptor proteins	
+WBP1/VOPP1 family	
+WIPI family	WIPI
+Purinosome	
+NDC80 kinetochore complex 	
+KMN network	
+KNL1 complex	
+Constitutive centromere associated network	
+DAZ RNA binding protein family 	DAZ
+Neurexins	NRXN
+Neuroligins	NRLGN
+MYST type domain containing lysine acetyltransferases	KAT
+Neurotrophins	NTF
+GDNF family ligands	
+Repulsive guidance molecule family	
+PI4KA lipid kinase complex	
+PIK3C3 complex subunits	
+Interferon induced transmembrane proteins	IFITM
+interferon induced transmembrane protein domain containing	
+Junctophilins	JPH
+Matrilins	MATN
+Enolases	ENO
+BAF complex	
+PBAF complex	
+GBAF complex	
+Myozenins	MYOZ
+PTF1 complex	
+Myogenic regulatory family	MYF
+Ciliogenesis and planar polarity effector complex subunits	CPLANE
+Metallo-beta-lactamase fold containing family	
+MBL domain containing glyoxalase 2 subfamily	
+MBL fold containing DNA/RNA interacting subfamily	
+Mitochondrial contact site and cristae organizing system subunits	MICOS
+LIMK/TESK kinase family	
+Terminal nucleotidyltransferases	TENT
+divergent protein kinase domain family	DIPK
+RAB11 binding domain containing	RAB11FIP
+Small NF90 (ILF3) associated RNAs	SNAR
+AGC family kinases	
+MARVEL domain containing	
+Axonemal dynein assembly factors	DNAAF
+Neuregulins	NRG
+Calmodulin dependent protein kinases	CAMK
+OOSP family	OOSP
+My-T-BRC complex	
+Chromatin accessibility complex	
+Tip60/Nua4 histone acetyltransferase complex subunits	
+Granule associated serine proteases of immune defence	
+Golgi associated kinase family	GASK
+Complement system activation components	
+Complement system regulators and receptors	
+C1q domain containing	
+Hexosaminidases	HEX
+TNK family tyrosine kinases	
+PTK2 family tyrosine kinases	
+PTK6 family tyrosine kinases	
+Early B-cell factors	EBF
+Clathrin subunits	
+Amylases alpha	AMY
+Neuraminidases	NEU
+Glycoside hydrolases	
+Heparanases	HPSE
+Glycoside hydrolase family 1	
+Alpha-L-fucosidases	FUCA
+Galactosidases beta	GLB
+Galactosidases alpha	GLA
+Shieldin complex	SHLD
+Family with sequence similarity 230	FAM230
+INHAT complex	
+SET complex	
+Cysteine rich transmembrane BMP regulators	CRIM
+Chordin family	CHRD
+Inhibin subunits	INH
+Glutamyl-tRNA amidotransferase subunits	
+Transforming growth factor beta family	TGFB
+Pseudouridine synthases	
+Oxoglutarate dehydrogenase family	OGDH
+Flavin containing monooxygenases	FMO
+Myosin light chain kinase family	MYLK
+Basigin family 	
+Adaptor related protein complexes	AP
+Adaptor related protein complex 1	AP1
+Adaptor related protein complex 2	AP2
+Adaptor related protein complex 3	AP3
+Adaptor related protein complex 4	AP4
+Adaptor related protein complex 5	AP5
+7SK snRNP complex	
+Wnt enhanceosome complex	
+EMAP like	EML
+TLE family	TLE
+Cytoplasmic transfer RNA pseudogenes	
+Metaxins	MTX
+Mitochondrial intermembrane space bridging complex 	
+Subcortical maternal complex	
+Mitochondrial sorting and assembly machinery complex	
+Endoribonucleases	
+MicroRNA non-coding host genes	MIR#HG
+Notch receptors	NOTCH
+MicroRNA host genes	
+MicroRNA protein coding host genes	
+LRAT domain containing family	
+Macro domain containing	
+SWC tripartite complex	
+MicroRNA MIR1/206 family	
+MicroRNA MIRLET7 family	
+MicroRNA MIR9 family	
+Deoxyribonucleoside kinases	
+MicroRNA MIR10/100 family	
+MicroRNA MIR29 family	
+MicroRNA MIR34/449 family	
+MicroRNA MIR17 family	
+MicroRNA MIR19 family	
+MicroRNA MIR25/92 family	
+MicroRNA MIR124 family	MIR124
+MicroRNA MIR133 family	MIR133
+MicroRNA MIR141/200 family	
+MicroRNA MIR219 family	MIR219
+MicroRNA MIR23 family	
+MicroRNA MIR128 family	MIR128
+MicroRNA MIR130 family	
+MicroRNA MIR132/212 family	
+MicroRNA MIR146 family	MIR146
+MicroRNA MIR148/152 family	
+MicroRNA MIR181 family	MIR181
+MicroRNA MIR192/215 family	
+MicroRNA MIR194 family	MIR194
+MicroRNA MIR196 family	MIR196
+MicroRNA MIR199 family	MIR199
+MicroRNA MIR203 family	MIR203
+MicroRNA MIR204/211 family	
+MicroRNA MIR208 family	MIR208
+MicroRNA MIR218 family	MIR218
+MicroRNA MIR451 family	MIR451
+Ribosomal biogenesis factors	
+PeBoW complex	
+Dehydrodolichyl diphosphate synthase 	
+Stomatin family	
+MicroRNA MIR7 family	MIR7
+MicroRNA MIR15/16 family	
+MicroRNA MIR24 family	MIR24
+MicroRNA MIR26 family	MIR26
+MicroRNA MIR27 family	MIR27
+MicroRNA MIR30 family	MIR30
+MicroRNA MIR33 family	MIR33
+Interferon regulatory factors 	IRF
+CDK activating kinase complex	
+General transcription factor IIH complex subunits	GTF2H
+General transcription factor IIE complex subunits	GTF2E
+General transcription factor IIIC complex subunits	GTF3C
+General transcription factor IIA complex subunits	GTF2A
+Depalmitoylases	
+General transcription factor IIF complex subunits	GTF2F
+FA core complex	
+IPT domain containing	
+MicroRNA MIR101 family	
+MicroRNA MIR103/107 family	
+MicroRNA MIR129 family	MIR129
+MicroRNA MIR135 family	MIR135
+MicroRNA MIR138 family	MIR138
+MicroRNA MIR153 family	MIR153
+MicroRNA MIR190 family	MIR190
+MicroRNA MIR193 family	MIR193
+MicroRNA MIR365 family	MIR365
+MicroRNA MIR216 family	MIR216
+MicroRNA MIR302 family	MIR302
+MicroRNA MIR551 family	MIR551
+MicroRNA MIR105 family	MIR105
+MicroRNA MIR95 family	
+MicroRNA MIR147 family	MIR147
+MicroRNA MIR154 family	
+MicroRNA MIR379 family	
+MicroRNA MIR329 family	
+MicroRNA MIR500 family	
+MicroRNA MIR374 family	MIR374
+RISC loading complex	
+MicroRNA MIR376 family	MIR376
+MicroRNA MIR378 family	MIR378
+MicroRNA MIR371 family	
+MicroRNA MIR515 family	
+B-WICH chromatin-remodelling complex subunits	
+MicroRNA MIR506 family	
+MicroRNA MIR450 family	MIR450
+MicroRNA MIR486 family	MIR486
+Serine beta lactamase family	
+Paralemmins	PALM
+SCAR/WAVE complex	
+MicroRNA MIR888 family	
+MicroRNA MIR891 family	MIR891
+MicroRNA MIR544 family	MIR544
+MicroRNA MIR550 family	MIR550
+Cyclin and CBS domain divalent metal cation transport mediators	CNNM
+I kappa B kinases	
+MicroRNA MIR28/151 family	
+MicroRNA MIR320 family	MIR320
+MicroRNA MIR188/532 family	
+MicroRNA MIR548 family	
+MicroRNA MIR663 family	MIR663
+Diphthamide biosynthesis pathway genes	DPH
+MicroRNA MIR664 family	MIR664
+MicroRNA MIR1255 family	MIR1255
+Histidine triad superfamily	
+CAMSAP family	CAMSAP
+ELMO domain containing	ELMOD
+Family with sequence similarity 83 	FAM83
+KCTD family	KCTD
+IKK complex	
+Variant U1 small nuclear RNAs	RNVU1
+ZUP1 deubiquitinase	ZUP
+Ectonucleotide pyrophosphatase/phosphodiesterase family	ENPP
+Ectonucleoside triphosphate diphosphohydrolase family	
+Pentatricopeptide repeat containing	PTCD
+B7 family	
+Guanylate binding proteins	GBP
+Microtubule associated protein RP/EB family 	MAPRE
+Profilins	PFN
+SLIT and NTRK like family	SLITRK
+TAFA chemokine like family	TAFA
+Tweety family	TTYH
+Torsins	TOR
+Thioesterase superfamily	THEM
+SSX family	SSX
+SPANX family	
+Small nucleolar RNA protein coding host genes	
+IGF like family	IGFL
+Chymotrypsin like elastases	CELA
+Small nucleolar RNA host genes	
+Small nucleolar RNA non-coding host genes	SNHG
+Inter-alpha-trypsin inhibitor heavy chains	ITIH
+LGI family	LGI
+NDRG family	NDRG
+XAGE family	XAGE
+GAGE family	GAGE
+PAGE family	PAGE
+SAGE family	SAGE
+BAGE family	BAGE
+CT antigen family 45	CT45
+CT antigen family 47	CT47
+CSAG family	CSAG
+Mitochondrial iron-sulfur assembly components	
+Iron-sulfur assembly components	
+Nectins and nectin-like molecules	
+Golgin related	
+Tim17 family	
+MicroRNA MIR1302 family	MIR1302
+MicroRNA MIR1184 family	MIR1184
+MicroRNA MIR1233 family	MIR1233
+MicroRNA MIR1244 family	MIR1244
+MicroRNA MIR1285 family	MIR1285
+MicroRNA MIR1289 family	MIR1289
+MicroRNA MIR1972 family	MIR1972
+MicroRNA MIR3118 family	MIR3118
+MicroRNA MIR3156 family	MIR3156
+MicroRNA MIR3179 family	MIR3179
+MicroRNA MIR3180 family	MIR3180
+MicroRNA MIR3198 family	MIR3198
+MicroRNA MIR3648 family	MIR3648
+MicroRNA MIR3670 family	MIR3670
+MicroRNA MIR3680 family	MIR3680
+NCoR/SMRT transcriptional repression complex subunits	
+Signal recognition particle	
+Low confidence cytoplasmic transfer RNAs	
+General transcription factor IID complex subunits 	TAF
+General transcription factor IIIB complex subunits 	
+Runt-related transcription factors	RUNX
+IQSEC ArfGEF family	IQSEC
+MAB21 family	MAB21
+Thioredoxin domain containing 	TXNDC
+HECT and RLD domain containing E3 ubiquitin protein ligases	HERC
+Atlastins	ATL
+Fibrillins	FBN
+Filamins	FLN
+BAG6 complex	
+Dolichyl-phosphate mannosyltransferase subunits	DPM
+KDEL endoplasmic reticulum protein retention receptors	KDELR
+Fibroblast growth factor family	FGF
+Glycoprotein hormone subunits	
+R-spondin family	RSPO
+WNK lysine deficient protein kinases	WNK
+AKT kinases	AKT
+Tachykinin precursors	TAC
+Neuropeptides	
+Aldolases	ALDO
+Endothelins	EDN
+Contactins	CNTN
+Lysosome associated membrane proteins	LAMP
+ER membrane protein complex subunits	EMC
+Guided entry of tail-anchored proteins complex subunits	GET
+GET4-GET5 transmembrane domain recognition complex subunits	
+Guided entry of tail-anchored proteins associated factors	
+Activating signal cointegrator 1 complex	ASCC
+COPI coat complex	COP
+Transmembrane and tetratricopeptide repeat containing	TMTC
+AH domain containing	
+AH/BAR family Rho GTPase activating proteins	
+BAR and Dbl domain containing	
+Prolyl 3-hydroxylase family	P3H
+Isocitrate dehydrogenases	IDH
+Pepsinogens	
+Peptidase family A1	
+Superoxide dismutases	SOD
+NRZ tethering complex	
+Transforming growth factor beta superfamily	
+RZZ complex	
+H1 histones	H1
+H2A histones	H2A
+H2B histones	H2B
+H3 histones	H3
+H4 histones	H4
+CCM adhesion complex	
+Calmodulin binding transcription activators 	CAMTA
+Caveolins	CAV
+TACC family	TACC
+Negative elongation factor complex members	NELF
+Sec7 family	
+Cytohesins	CYTH
+ARFGEF family	ARFGEF
+Pleckstrin and Sec7 domain containing	PSD
+Heterogeneous nuclear ribonucleoproteins	HNRNP
+Glycosylphosphatidylinositol transamidase complex	
+Pantothenate kinases	PANK
+TMEM8 family	TMEM8
+Rho guanine nucleotide exchange factors	
+HECT domain containing	
+COPII coat complex	
+Protein coat complexes	
+SMG1 complex	
+SURF complex	
+DECID complex	
+Steroid 5-alpha reductase family	SRD5A
+SUN family	SUN
+Contactin associated protein family	CNTNAP
+CREB3 transcription factor family	CREB3
+Shroom family	SHROOM
+Mitochondrial genome	MT-
+Mitochondrially encoded regions	
+Mitochondrially encoded protein coding genes	
+Mitochondrially encoded RNAs	
+Mitochondrially encoded long non-coding RNAs	
+IFT-A complex	
+IFT-B complex	
+IFT-B1 complex	IFT
+IFT-B2 complex	IFT
+Tenascins	TN
+Ras related GTP binding proteins	RRAG
+Nuclear factor I family	NFI
+Long intergenic non-protein coding RNAs	LINC
+Antisense RNAs	
+Overlapping transcripts	
+Intronic transcripts	
+Divergent transcripts	
+Long non-coding RNAs with non-systematic symbols	
+Long non-coding RNAs with FAM root symbol	
+Large subunit mitochondrial ribosomal proteins	MRPL
+Small subunit mitochondrial ribosomal proteins	MRPS
+HIRA histone chaperone complex subunits	
+minichromosome maintenance 2-7 complex	
+CMG helicase complex	
+APC membrane recruitment proteins	AMER
+Atrophins	
+Linker of nucleoskeleton and cytoskeleton complex subunits	
+Formins	
+R2SP complex	
+KASH domain containing	
+FHF complex	
+Outer dynein arm docking complex subunits	ODAD
+Type II transmembrane serine proteases	
+IQ motif containing GTPase activating protein family	IQGAP
+Procollagen-lysine,2-oxoglutarate 5-dioxygenase family	PLOD
+3-hydroxyacyl-CoA dehydratase family	HACD
+Dynein 1 complex subunits	DYNC1
+Dynein 2 complex subunits	DYNC2
+ADP-ribosyltransferase family	ART
+Dyneins, axonemal outer arm complex subunits	
+Dyneins, axonemal inner arm I1/f complex subunits	
+dishevelled binding antagonist of beta catenin family	DACT
+DNA cross-link repair family	DCLRE1
+Radical S-adenosylmethionine domain containing	
+Argonaute RISC component family	AGO
+Piwi like RNA-mediated gene silencing family	PIWIL
+Myosin light chains, class 1	
+Myosin light chains, class 2	
+CREC family	
+ Mitochondrial translation release factor family	MTRF
+U11 small nuclear ribonucleoprotein	
+Axonemal radial spoke subunits 	RSPH
+Methylcrotonyl-CoA carboxylase subunits	MCCC
+Transcription factor AP-2 family	TFAP2
+Tet methylcytosine dioxygenase family	TET
+Adducin family	ADD
+TNRC6 adaptor family	TNRC6
+PARN exonuclease family	
+ATPase F1/V1 alpha/A and beta/B subunit family	
+7TM proteins	
+TLDc domain containing	TLDC
+7BS protein lysine methyltransferases	
+7BS protein arginine methyltranferases	
+7BS protein methyltransferases	
+7BS DNA/RNA methyltransferases	
+7BS C5-cytosine DNA/RNA methyltransferases	
+7BS N6-adenosine DNA/RNA methyltransferases	
+7BS 2'O-ribose DNA/RNA methyltransferases	
+7BS small molecule methyltransferases	
+Homocysteine methyltransferases	
+7BS orphan methyltransferases	
+Apelin receptor	
+Nuclear receptor subfamily 0 group B	NR0B
+Retinoic acid receptors	RAR
+Thyroid hormone receptors	THR
+Peroxisome proliferator activated receptors	PPAR
+Nuclear receptor subfamily 1 group D	NR1D
+Nuclear receptor subfamily 2 group C	NR2C
+Nuclear receptor subfamily 2 group E	NR2E
+Nuclear receptor subfamily 2 group F	NR2F
+Nuclear receptor subfamily 3 group C	NR3C
+Estrogen receptors	ESR
+Estrogen related receptors	ESRR
+Nuclear receptor subfamily 4 group A	NR4A
+Nuclear receptor subfamily 5 group A	NR5A
+Nuclear receptor subfamily 6 group A	NR6A
+RAR related orphan receptors	ROR
+Nuclear receptor subfamily 1 group H	NR1H
+Nuclear receptor subfamily 1 group I	NR1I
+Hepatocyte nuclear factor 4 family	HNF4
+Retinoid X receptors	RXR
+SWI/SNF related BAF chromatin remodeling complexes	
+Glucosylceramidases	GBA
+2'-5'-oligoadenylate synthetase family	OAS
+Peptidase family A28 	
+Peptidase family A22	
+Cleavage factor Im complex subunits	
+Class I HDAC complexes	
+MiDAC complex subunits	
+Metallopeptidases	
+M48 metallopeptidase family	
+M49 metallopeptidase family	
+M54 metallopeptidase family	
+M76 metallopeptidase family	
+Peptidase family C1	
+Glyoxalase domain containing family	
+Ferredoxin family	FDX
+Aminoacyl tRNA synthetase complex interacting multifunctional proteins	AIMP
+Tubulin polyglutamylase complex subunits	TPGS
+Leiomodins	LMOD
+SKI complex subunits	
+Fc receptors	
+Eukaryotic translation initiation factor 2 alpha kinases	EIF2AK
+Zinc fingers PCLO-type	
+SCF complex core subunits	
+PAS domain containing	PASD
+MIF4G domain containing proteins	
+MD-2 related lipid recognition domain containing	
+GIY-YIG endonuclease domain containing	GIYD
+SIK family kinases	SIK
+Microtubule affinity regulating kinases	MARK
+PRKAA related kinases	
+Protein kinase AMP-activated catalytic subunit alphas	PRKAA
+BR serine/threonine kinases	BRSK
+NUAK family kinases	NUAK
+MELK family kinases	MELK
+Zinc fingers TRAF-type	
+Phosphorylase kinase subunits	PHK
+bridge-like lipid transfer protein family	BLTP
+Serine hydroxymethyltransferase family	SHMT
+Protein kinase A subunits	
+Alpha-2-macroglobulin family	
+Teneurin transmembrane protein family	TENM
+thymocyte selection associated high mobility group box family	TOX
+Dispatched RND transporter family 	DISP
+Transmembrane protein 14 family	TMEM14
+Glycosylphosphatidylinositol-N-acetylglucosaminyltransferase complex	
+Tubulin gamma complex associated protein family	TUBGCP
+NHERF family PDZ scaffold proteins	NHERF
