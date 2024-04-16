@@ -8,13 +8,15 @@
 ##
 ## Last Modified: Apr. 2024 by Wenjia Wang
 
+# make the bash scripts executable
+chmod +x *.sh
+
+#installation methods
 mkdir -p tools/bin 
 cd tools 
 
 #a list of which programs need to be installed
 commands="samtools minimap2 bedtools bowtie2"
-
-#installation methods
 
 function minimap2_install {
    wget https://github.com/lh3/minimap2/releases/download/v2.17/minimap2-2.17_x64-linux.tar.bz2
@@ -123,6 +125,9 @@ for s in $stages ; do
     s_path=$PWD/$s.R
     echo "$s=\"$s_path\"" >> ../tools.path
 done
+
+
+
 
 
 

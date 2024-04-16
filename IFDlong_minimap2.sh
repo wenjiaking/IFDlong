@@ -1,4 +1,4 @@
-#!/bin/bash (or #!/usr/bin/env bash)
+#!/bin/bash
 ############################################################
 # Help                                                     #
 ############################################################
@@ -11,7 +11,7 @@ Help()
    echo "  -o, --outDir      The directory to save the output."
    echo "  -n, --name        The sample name."
    echo "  -i, --inFile      Input FASTQ file of long read RNAseq data."
-   echo "  -g, --ghc         Human (-g hg38) or mouse data (-g mm10), hg38 by default."
+   echo "  -g, --ghc         Human (hg38), mouse (mm10) or other self-defined species (the same value as -g in refDataSetup.sh), hg38 by default"
    echo "  -t, --bufferLen   The buffer length for novel isoform identification, 9 by default."
    echo "  -a, --anchorLen   The anthor length for fusion filtering, 10 by default."
    echo "  -c, --ncores      How many cores are assigned to run the pipeline in parallel. Use single core by default"

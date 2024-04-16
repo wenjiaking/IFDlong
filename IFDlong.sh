@@ -12,7 +12,7 @@ Help()
    echo "  -n, --name        The sample name."
    echo "  -b, --bamFile     Input BAM file after alignment and indexing ."
    echo "  -l, --aligner     The aligner used to generated the bam file. set to be self_align if missing"
-   echo "  -g, --ghc         Human (-g hg38) or mouse data (-g mm10), hg38 by default."
+   echo "  -g, --ghc         Human (hg38), mouse (mm10) or other self-defined species (the same value as -g in refDataSetup.sh), hg38 by default"
    echo "  -t, --bufferLen   The buffer length for novel isoform identification, 9 by default."
    echo "  -a, --anchorLen   The anthor length for fusion filtering, 10 by default."
    echo "  -c, --ncores      How many cores are assigned to run the pipeline in parallel. Use single core by default"

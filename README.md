@@ -29,10 +29,41 @@ cd IFDlong
 bash install.sh
 ```
 
-### Run for Human or Mouse Data
+### Reference Database preparation
 
-Our tools contains all the required reference files for human and mouse that have been generated from GRCh38 (Genome Research Consortium human build 38) and GRCm38 (Genome Reference Consortium Mouse Build 38) respectively under the `refData` folder. So you don't need to prepare the genome references unless you want to refer to other genome assembly.
+1. Download the USCS Genome Research Consortium from [illumina iGenomes](https://support.illumina.com/sequencing/sequencing_software/igenome.html). For human and mouse, unzip and save the genome sequence file "genome.fa" and genome annotation file "genes.gtf" to `refData/hg38` and `refData/mm10` respectively. For other species, create a subfolder under `refData`, e.g., `refData/self_species`, and save the genome sequence and annotation files to the directory.
 
+2. Our tools contains the formatted reference files for human and mouse that have been generated based on GRCh38 (Genome Research Consortium human build 38) and GRCm38 (Genome Reference Consortium Mouse Build 38) respectively under the `refData` folder. So you don't need to run `refDataSetup.sh`. However, for other specises, set up the reference folder by `refDataSetup.sh` as below before runing `IFDlong.sh` or `IFDlong_minimap2.sh`.
+
+
+The following command can set up the reference database for the species other than human and mouse given reference genome sequence in FASTA file and the reference genome annotation in GTF file downloaded in the first step. You are also recommended to provide the pseudogene list in RDS format and the gene family root names in TXT file (containing two columns: "Family.name" and "Common.root.gene.symbol") in order to filter out the reads annotated to pseudo genes and fusions consisting of genes from the same family. All the files must be saved under the species folder (e.g., self_species) under `refData`.
+
+The reference genome sequence and genome annotation are required, while the reference pseudogene list and root names of gene family are highly suggested to be provided, otherwise reads containing pseudo genes and fusion reads consisting of genes from the same family cannot be filtered out by runing IFDlong pipeline. 
+
+
+```bash
+bash refDataSetup.sh [OPTIONS]
+```
+
+Running with default settings:
+```bash
+bash refDataSetup.sh -r path_to_genome.fa -m path_to_genes.gtf -p path_to_pseudo.rds -f path_to_roots.txt -g self_species -c 1
+```
+
+Required options:
+```
+-h, --help        Check the usage
+-r, --refGTF      Full path to the reference genes.gtf file from GRC
+-m, --refGenome   Full path to the reference genome.fa file from GRC
+-p, --pseudoList  Full path to the reference list of pseudo genes in RDS format
+-f, --roots       Full path to the gene family root names in TXT format
+-g, --ghc         Speficy the species other than Human (hg38) and mouse (mm10)
+-c, --ncores      How many cores are assigned to run in parallel. Use single core by default
+
+```
+
+
+### Run IFDlong Pipeline
 
 If your input is BAM file after alignment and indexing, then input the BAM file and run the following bash command:
 
@@ -52,7 +83,7 @@ Required options:
 -n, --name        The sample name
 -b, --bamFile     Input BAM file after alignment and indexing
 -l, --aligner     The aligner used to generated the bam file. Set to be self_align if missing
--g, --ghc         Human (-g hg38) or mouse data (-g mm10), hg38 by default
+-g, --ghc         Human (hg38), mouse (mm10) or other self-defined species (the same value as -g in refDataSetup.sh), hg38 by default
 -t, --bufferLen   The buffer length for novel isoform identification, 9 by default
 -a, --anchorLen   The anthor length for fusion filtering, 10 by default
 -c, --ncores      How many cores are assigned to run the pipeline in parallel. Use single core by default
@@ -76,39 +107,9 @@ Required options:
 -o, --outDir      The directory to save the output
 -n, --name        The sample name
 -i, --inFile      Input FASTQ file of long read RNAseq data
--g, --ghc         Human (-g hg38) or mouse data (-g mm10), hg38 by default
+-g, --ghc         Human (hg38), mouse (mm10) or other self-defined species (the same value as -g in refDataSetup.sh), hg38 by default
 -t, --bufferLen   The buffer length for novel isoform identification, 9 by default
 -a, --anchorLen   The anthor length for fusion filtering, 10 by default
 -c, --ncores      How many cores are assigned to run the pipeline in parallel. Use single core by default
 ```
-
-
-### Prepare Reference Files for Species Other than Human and Mouse
-
-If the long-read RNA-seq data is other species, you should prepare the required references before runing `IFDlong.sh` or `IFDlong_minimap2.sh`. The following command can set up the reference database given reference genome sequence in FASTA file (e.g., genome.fa), the reference genome annotation in GTF file (e.g., genes.gtf), the pseudogene list in RDS format, as well as the gene family root names in TXT file (containing two columns: "Family.name" and "Common.root.gene.symbol").
-
-The reference genome sequence and genome annotation are required, while the reference pseudogene list and root names of gene family are highly suggested to be provided, otherwise reads containing pseudo genes and fusion reads consisting of genes from the same family cannot be filtered out by runing IFDlong pipeline. 
-
-
-```bash
-bash refDataSetup.sh [OPTIONS]
-```
-
-Running with default settings:
-```bash
-bash refDataSetup.sh -r genome_GTF_file -m genome_FASTA_file -p pseudo_RDS_file -f roots_TXT_file -g species -c 1
-```
-
-Required options:
-```
--h, --help        Check the usage
--r, --refGTF      The reference genes.gtf file from GRC
--m, --refGenome   The reference genome.fa file from GRC
--p, --pseudoList  The reference list of pseudo genes in RDS format
--f, --roots       The gene family root names in TXT format
--g, --ghc         Speficy the species other than Human (hg38) and mouse (mm10)
--c, --ncores      How many cores are assigned to run in parallel. Use single core by default
-
-```
-
 

@@ -8,10 +8,10 @@ Help()
    echo ""
    echo "Options:"
    echo "  -h, --help        Check the usage. Please note that reference pseudogene list and root names of gene family are highly suggested to be provided, otherwise fusions consisting of pseudogenes or genes from the same family cannot be filtered out. "
-   echo "  -r, --refGTF      The reference genes.gtf file from GRC."
-   echo "  -m, --refGenome   The reference genome.fa file from GRC."
-   echo "  -p, --pseudoList  The reference list of pseudo genes in RDS format."
-   echo "  -f, --roots       The gene family root names in TXT format."
+   echo "  -r, --refGTF      Full path to the reference genes.gtf file."
+   echo "  -m, --refGenome   Full path to the reference genome.fa file from GRC."
+   echo "  -p, --pseudoList  Full path to the reference list of pseudo genes in RDS format."
+   echo "  -f, --roots       Full path to the gene family root names in TXT format."
    echo "  -g, --ghc         Speficy the species. The reference database has already built for Human (hg38) and mouse (mm10)."
    echo "  -c, --ncores      How many cores are assigned to generate reference files in parallel. Use single core by default"
 
@@ -111,10 +111,12 @@ mkdir -p $refDir
 cp $refGTFFile $refDir
 base_name=$(basename ${refGTFFile})
 mv $refDir/$base_name $refDir/genes.gtf
+#mv $refDir/$refGTFFile $refDir/genes.gtf
 
 cp $refGenome $refDir
 base_name=$(basename ${refGenome})
 mv $refDir/$base_name $refDir/genome.fa
+#mv $refDir/$refGenome $refDir/genome.fa
 
 if [ -z "$refpseudo" ]; then
   echo "Missiong optional reference of pseudo gene list. When run IFDlong, reads containing pseudo genes cannot be fitered out."
@@ -122,6 +124,8 @@ else
   cp $refpseudo $refDir
   base_name=$(basename ${refpseudo})
   mv $refDir/$base_name $refDir/pseudogenes.rds
+  #mv $refDir/$refpseudo $refDir/pseudogenes.rds
+fi
 fi
 
 if [ -z "$refroots" ]; then
@@ -130,6 +134,8 @@ else
   cp $refroots $refDir
   base_name=$(basename ${refroots})
   mv $refDir/$base_name $refDir/rootName.txt
+  #mv $refDir/$refroots $refDir/rootName.txt
+
 fi
 
 
