@@ -16,7 +16,7 @@ mkdir -p tools/bin
 cd tools 
 
 #a list of which programs need to be installed
-commands="samtools minimap2 bedtools bowtie2"
+commands="samtools minimap2 bedtools"
 
 function minimap2_install {
    wget https://github.com/lh3/minimap2/releases/download/v2.17/minimap2-2.17_x64-linux.tar.bz2
