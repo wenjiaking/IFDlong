@@ -73,6 +73,7 @@ for c in $commands ; do
 	${c}_install
     fi
     c_path=`which $PWD/bin/$c 2>/dev/null`
+    echo "$c=\"$c_path\""
     echo "$c=\"$c_path\"" >> ../tools.path
 done
 
@@ -96,6 +97,7 @@ if [ -z $R_path ] ; then
     echo "R version >= 4.0.0."
     echo "Require the dependent packages: parallel, rlist, stringr, rtracklayer, Biostrings, dplyr, seqRFLP."
 fi
+echo "Rscript=\"$R_path\""
 echo "Rscript=\"$R_path\"" >> ../tools.path
 
 #loop through commands to check they are all installed
