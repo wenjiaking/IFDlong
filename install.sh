@@ -71,9 +71,8 @@ for c in $commands ; do
     if [ -z $c_path ] ; then 
 	echo "$c not found, fetching it"
 	${c}_install
-    fi
     c_path=`which $PWD/bin/$c 2>/dev/null`
-    echo "$c=\"$c_path\""
+    fi
     echo "$c=\"$c_path\"" >> ../tools.path
 done
 
@@ -97,7 +96,6 @@ if [ -z $R_path ] ; then
     echo "R version >= 4.0.0."
     echo "Require the dependent packages: parallel, rlist, stringr, rtracklayer, Biostrings, dplyr, seqRFLP."
 fi
-echo "Rscript=\"$R_path\""
 echo "Rscript=\"$R_path\"" >> ../tools.path
 
 #loop through commands to check they are all installed
@@ -122,7 +120,7 @@ mkdir -p scripts
 cd scripts
 
 stages="reportFuns reportFuns_parallel EXONuncover report quant refGen refAAGen"
-echo "// Path to scripts used by the IFDlong pipeline" > ../tools.path
+echo "// Path to scripts used by the IFDlong pipeline" >> ../tools.path
 for s in $stages ; do 
     s_path=$PWD/$s.R
     echo "$s=\"$s_path\"" >> ../tools.path
