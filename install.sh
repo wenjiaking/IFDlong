@@ -71,8 +71,8 @@ for c in $commands ; do
     if [ -z $c_path ] ; then 
 	echo "$c not found, fetching it"
 	${c}_install
-	c_path=`which $PWD/bin/$c 2>/dev/null`
     fi
+    c_path=`which $PWD/bin/$c 2>/dev/null`
     echo "$c=\"$c_path\"" >> ../tools.path
 done
 
