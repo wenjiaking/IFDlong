@@ -16,7 +16,7 @@ mkdir -p tools/bin
 cd tools 
 
 #a list of which programs need to be installed
-commands="samtools minimap2 bedtools"
+commands="samtools minimap2"
 
 function minimap2_install {
    wget https://github.com/lh3/minimap2/releases/download/v2.17/minimap2-2.17_x64-linux.tar.bz2
@@ -64,18 +64,6 @@ fi
 echo "gcc check passed"
 
 
-echo "// Path to tools used by the IFDlong pipeline" > ../tools.path
-
-for c in $commands ; do 
-    c_path=`which $PWD/bin/$c 2>/dev/null`
-    if [ -z $c_path ] ; then 
-	echo "$c not found, fetching it"
-	${c}_install
-    c_path=`which $PWD/bin/$c 2>/dev/null`
-    fi
-    echo "$c=\"$c_path\"" >> ../tools.path
-done
-
 #Check if the version of R is >= 4.0.0
 #R_version=`R --version`
 #R_check=`echo -e "${R_version:10:5}\n4.0.0" | sort -n | tail -n1`
@@ -95,21 +83,53 @@ if [ -z $R_path ] ; then
     echo "Please go to http://www.r-project.org/ and follow the installation instructions."
     echo "R version >= 4.0.0."
     echo "Require the dependent packages: parallel, rlist, stringr, rtracklayer, Biostrings, dplyr, seqRFLP."
+    exit 1
 fi
-echo "Rscript=\"$R_path\"" >> ../tools.path
+echo "Rscript=\"$R_path\"" > ../tools.path
+
+bedtools_path=`which bedtools 2>/dev/null`
+if [ -z $bedtools_path ] ; then
+
+    bedtools_path=`which $PWD/bin/bedtools 2>/dev/null`
+    if [ -z $bedtools_path ] ; then
+        echo "bedtools not found!"
+        echo "Please go to https://github.com/arq5x/bedtools2 to download version 2.29 following the instructions."
+        echo "Copy the bedtools under your downloaded bin folder to ./tools/bin."
+    fi
+    
+fi
+echo "bedtools=\"$bedtools_path\"" >> ../tools.path
+
+
+echo "// Path to tools used by the IFDlong pipeline" >> ../tools.path
+
+for c in $commands ; do 
+    c_path=`which $c 2>/dev/null`
+    if [ -z $c_path ] ; then 
+        c_path=`which $PWD/bin/$c 2>/dev/null`
+        if [ -z $c_path ] ; then 
+            echo "$c not found, fetching it"
+            ${c}_install
+            c_path=`which $PWD/bin/$c 2>/dev/null`
+        fi
+    fi
+    echo "$c=\"$c_path\"" >> ../tools.path
+done
 
 #loop through commands to check they are all installed
 echo "Checking that all required tools were installed:"
 Final_message="All commands installed successfully!"
-for c in $commands ; do
-    c_path=`which $PWD/bin/$c 2>/dev/null`
+source(../tools.path)
+for t in $commands ; do
+    #c_path=`which $PWD/bin/$c 2>/dev/null`
+    c_path=`which $c 2>/dev/null`
     if [ -z $c_path ] ; then
-	echo -n "WARNING: $c could not be found!!!! " 
-	echo "You will need to download and install $c manually, then add its path to tools.path"
+	echo -n "WARNING: $t could not be found!!!! " 
+	echo "You will need to download and install $t manually, then add its path to tools.path"
 	Final_message="WARNING: One or more command did not install successfully. See warning messages above. \
                        You will need to correct this before running IFDlong."
     else 
-        echo "$c looks like it has been installed"
+        echo "$t looks like it has been installed"
     fi
 done
 echo "**********************************************************"
