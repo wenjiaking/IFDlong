@@ -119,7 +119,7 @@ done
 #loop through commands to check they are all installed
 echo "Checking that all required tools were installed:"
 Final_message="All commands installed successfully!"
-source(../tools.path)
+source ../tools.path
 for t in $commands ; do
     #c_path=`which $PWD/bin/$c 2>/dev/null`
     c_path=`which $c 2>/dev/null`
