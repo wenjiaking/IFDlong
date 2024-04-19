@@ -91,11 +91,11 @@ while [[ $# -gt 0 ]]; do
 done
 
 # Check if the required options are provided
-if [ -z "$name" ]; then
+if [ -z "$sample" ]; then
   echo "Missing required option to specify sample name: -n|--name"
   Help
   
-elif [[ -z "$outDir" ]]; then
+elif [[ -z "$mainPath" ]]; then
   echo "Missing required option to set output directory: -o|--outDir"
   Help
 
