@@ -7,13 +7,26 @@ IFDlong is a bioinformatics pipeline that can perform long-read RNA-seq annotati
 
 ## Dependencies ##
 
-Some of the dependent tools can be automatically downloaded and installed by run `bash install.sh` from the sources below:
+The required tools for IFDlong are: gcc (>= 8.2.0), R (>=4.0.0), minimap2 (>=2.17), bedtools (>=2.29), samtools (>=1.9). 
+
+Please make sure that **gcc (>= 8.2.0)**, **R (>=4.0.0)** and **bedtools (>=2.29)** already exist in your environment by `which` command. For example, check `which bedtools`, and if `bedtools` cannot be found, install [bedtools2](https://github.com/arq5x/bedtools2) following the instrunctions, and then copy the `bedtools` under your downloaded `bin` folder to `./tools/bin`. Below is the reference command to help you manually download and install the `bedtools`:
+
+```bash
+cd ./tools
+wget https://github.com/arq5x/bedtools2/releases/download/v2.29.0/bedtools-2.29.0.tar.gz
+tar -zxvf bedtools-2.29.0.tar.gz; rm bedtools-2.29.0.tar.gz
+cd bedtools2
+make
+cd ..
+cp bedtools2/bin/bedtools bin/
+```
+
+The other dependent tools can be automatically checked and installed by run `bash install.sh` from the sources below:
 
 - [minimap2](https://github.com/lh3/minimap2/releases/download/v2.17/minimap2-2.17_x64-linux.tar.bz2)
-- [bedtools2](https://github.com/arq5x/bedtools2/releases/download/v2.29.0/bedtools-2.29.0.tar.gz)
 - [samtools](http://sourceforge.net/projects/samtools/files/samtools/1.9/samtools-1.9.tar.bz2)
 
-However, **gcc (>= 8.2.0)** and **R (>=4.0.0)** must be manually installed by users. In addition, the R pacakges **rlist, parallel, stringr, dplyr, seqRFLP, BiocManager,rtracklayer, Biostrings** are required and recommended to be installed before running the pipeline, though they can be installed automatically.
+In addition, the R pacakges **rlist, parallel, stringr, dplyr, seqRFLP, BiocManager,rtracklayer, Biostrings** are required and recommended to be installed before running the pipeline, though they can be installed automatically.
 
 The paths to these will be automatically put into your tools.path file after you successfully run `bash install.sh`. 
 
