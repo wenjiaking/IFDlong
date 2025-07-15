@@ -4,10 +4,11 @@
 
 IFDlong is a bioinformatics pipeline that can perform long-read RNA-seq annotation at isoform levels, fusion detection, as well as fusion and isoform quantification.
 
+## Installation ##
+### Dependencies ###
 
-## Dependencies ##
-
-The required tools for IFDlong are: gcc (>= 8.2.0), R (>=4.0.0), minimap2 (>=2.17), bedtools (>=2.29), samtools (>=1.9). 
+The required tools for IFDlong are: gcc (>= 8.2.0), minimap2 (>=2.17), bedtools (>=2.29), samtools (>=1.9).   
+R (>=4.0.0) and R pacakges rlist, parallel, stringr, dplyr, seqRFLP, BiocManager,rtracklayer, Biostrings are required 
 
 Please make sure that **gcc (>= 8.2.0)**, **R (>=4.0.0)** and **bedtools (>=2.29)** already exist in your environment by `which` command. For example, check `which bedtools`, and if `bedtools` cannot be found, install [bedtools2](https://github.com/arq5x/bedtools2) following the instrunctions, and then copy the `bedtools` under your downloaded `bin` folder to `./tools/bin`. Below is the reference command to help you manually download and install the `bedtools`:
 
@@ -30,9 +31,7 @@ In addition, the R pacakges **rlist, parallel, stringr, dplyr, seqRFLP, BiocMana
 
 The paths to these will be automatically put into your tools.path file after you successfully run `bash install.sh`. 
 
-## Usage ##
-
-### Installing
+### Installation pipeline ###
 
 It will automatically install the dependent tools and put their paths to the `tools.path` file.
 
@@ -41,6 +40,12 @@ git clone https://github.com/wenjiaking/IFDlong.git
 cd IFDlong
 bash install.sh
 ```
+
+## Reference Database ##
+
+## Usage ##
+
+
 
 ### Reference Database preparation
 
