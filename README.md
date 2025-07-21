@@ -4,46 +4,58 @@
 
 IFDlong is a bioinformatics pipeline that can perform long-read RNA-seq annotation at isoform levels, fusion detection, as well as fusion and isoform quantification.
 
+
 ## Installation ##
 ### Dependencies ###
 
 The required tools for IFDlong are: gcc (>= 8.2.0), minimap2 (>=2.17), bedtools (>=2.29), samtools (>=1.9).   
-R (>=4.0.0) and R pacakges rlist, parallel, stringr, dplyr, seqRFLP, BiocManager,rtracklayer, Biostrings are required 
-
-Please make sure that **gcc (>= 8.2.0)**, **R (>=4.0.0)** and **bedtools (>=2.29)** already exist in your environment by `which` command. For example, check `which bedtools`, and if `bedtools` cannot be found, install [bedtools2](https://github.com/arq5x/bedtools2) following the instrunctions, and then copy the `bedtools` under your downloaded `bin` folder to `./tools/bin`. Below is the reference command to help you manually download and install the `bedtools`:
-
-```bash
-cd ./tools
-wget https://github.com/arq5x/bedtools2/releases/download/v2.29.0/bedtools-2.29.0.tar.gz
-tar -zxvf bedtools-2.29.0.tar.gz; rm bedtools-2.29.0.tar.gz
-cd bedtools2
-make
-cd ..
-cp bedtools2/bin/bedtools bin/
-```
-
-The other dependent tools can be automatically checked and installed by run `bash install.sh` from the sources below:
-
-- [minimap2](https://github.com/lh3/minimap2/releases/download/v2.17/minimap2-2.17_x64-linux.tar.bz2)
-- [samtools](http://sourceforge.net/projects/samtools/files/samtools/1.9/samtools-1.9.tar.bz2)
-
-In addition, the R pacakges **rlist, parallel, stringr, dplyr, seqRFLP, BiocManager,rtracklayer, Biostrings** are required and recommended to be installed before running the pipeline, though they can be installed automatically.
-
-The paths to these will be automatically put into your tools.path file after you successfully run `bash install.sh`. 
+R (>=4.0.0) and R pacakges rlist, parallel, stringr, dplyr, seqRFLP, BiocManager,rtracklayer, Biostrings are required.
 
 ### Installation pipeline ###
-
-It will automatically install the dependent tools and put their paths to the `tools.path` file.
-
+Methods1: Install maunally  
+It will automatically install the dependent tools and put their paths to the `tools.path` file.  
 ```bash
 git clone https://github.com/wenjiaking/IFDlong.git
 cd IFDlong
 bash install.sh
 ```
 
+Methods2: Install via conda
+```
+conda env create -f IFDlong.yaml
+```
+
 ## Reference Database ##
+Our tools include built-in reference datasets for human (hg38) and mouse (mm10). If you would like to use a custom reference for another species, please refer to the optional commands.
 
 ## Usage ##
+### Quick Star
+To verify your installation and run a example.
+```bash
+bash IFDlong.sh -o output_directory -n sample_name -i input_file -l "self_align" -g "hg38" -t 9 -a 10 -c 1
+```
+
+### Run IFDlong Pipeline
+Our tool accepts both FASTQ and BAM files as input. If using FASTQ, it will be aligned using Minimap2. If using BAM, please ensure the files are already aligned and indexed.
+
+Running with default settings:
+```bash
+bash IFDlong.sh -o output_directory -n sample_name -b input_BAM_file -l "self_align" -g "hg38" -t 9 -a 10 -c 1
+```
+
+Required options:
+```
+-h, --help        Check the usage.
+-o, --outDir      The directory to save the output
+-n, --name        The sample name
+-i, --inFile      Input file <sampleID.fq>|<sampleID.bam>
+-l, --aligner     The aligner used to generated the bam file. Set to be self_align if missing.
+-g, --ghc         Human (hg38), mouse (mm10) or other self-defined species (the same value as -g in refDataSetup.sh), hg38 by default
+-t, --bufferLen   The buffer length for novel isoform identification, 9 by default
+-a, --anchorLen   The anthor length for fusion filtering, 10 by default
+-c, --ncores      How many cores are assigned to run the pipeline in parallel. Use single core by default
+
+```
 
 
 
@@ -80,54 +92,7 @@ Required options:
 
 ```
 
+## Citation ##
+The study describing the IFDlong method can be found in: 
 
-### Run IFDlong Pipeline
-
-If your input is BAM file after alignment and indexing, then input the BAM file and run the following bash command:
-
-```bash
-bash IFDlong.sh [OPTIONS]
-```
-
-Running with default settings:
-```bash
-bash IFDlong.sh -o output_directory -n sample_name -b input_BAM_file -l "self_align" -g "hg38" -t 9 -a 10 -c 1
-```
-
-Required options:
-```
--h, --help        Check the usage.
--o, --outDir      The directory to save the output
--n, --name        The sample name
--b, --bamFile     Input BAM file after alignment and indexing
--l, --aligner     The aligner used to generated the bam file. Set to be self_align if missing
--g, --ghc         Human (hg38), mouse (mm10) or other self-defined species (the same value as -g in refDataSetup.sh), hg38 by default
--t, --bufferLen   The buffer length for novel isoform identification, 9 by default
--a, --anchorLen   The anthor length for fusion filtering, 10 by default
--c, --ncores      How many cores are assigned to run the pipeline in parallel. Use single core by default
-
-```
-
-`minimap2` is embeded in the IFDlong tool. So if your input is FASTQ file, then input the FASTQ file and run the following bash command:
-
-```bash
-bash IFDlong_minimap2.sh [OPTIONS]
-```
-
-Running with default settings:
-```bash
-bash IFDlong_minimap2.sh -o output_directory -n sample_name -i input_FASTQ_file -g "hg38" -t 9 -a 10 -c 1
-```
-
-Required options:
-```
--h, --help        Check the usage
--o, --outDir      The directory to save the output
--n, --name        The sample name
--i, --inFile      Input FASTQ file of long read RNAseq data
--g, --ghc         Human (hg38), mouse (mm10) or other self-defined species (the same value as -g in refDataSetup.sh), hg38 by default
--t, --bufferLen   The buffer length for novel isoform identification, 9 by default
--a, --anchorLen   The anthor length for fusion filtering, 10 by default
--c, --ncores      How many cores are assigned to run the pipeline in parallel. Use single core by default
-```
 
