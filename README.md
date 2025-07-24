@@ -7,9 +7,11 @@ IFDlong is a bioinformatics pipeline that can perform long-read RNA-seq annotati
 
 ## Installation ##
 ### Dependencies ###
-
-The required tools for IFDlong are: gcc (>= 8.2.0), minimap2 (>=2.17), bedtools (>=2.29), samtools (>=1.9).   
-R (>=4.0.0) and R pacakges rlist, parallel, stringr, dplyr, seqRFLP, BiocManager,rtracklayer, Biostrings are required.
+R (≥ 4.0.0) along with a compatible version of gcc.  
+The following tools are required for running IFDlong: minimap2 (≥ 2.17), bedtools (≥ 2.29), and samtools (≥ 1.9)  
+If these tools are not already installed, they will be installed automatically during the install.sh step.
+Required R packages include: rlist, parallel, stringr, dplyr, seqRFLP, BiocManager, rtracklayer, and Biostrings.
+These packages will also be installed automatically during processing.
 
 ### Installation pipeline ###
 Methods1: Install maunally  
@@ -22,11 +24,24 @@ bash install.sh
 
 Methods2: Install via conda
 ```
+git clone https://github.com/wenjiaking/IFDlong.git
 conda env create -f IFDlong.yaml
 ```
 
-## Reference Database ##
+## Installation Reference Database ##
 Our tools include built-in reference datasets for human (hg38) and mouse (mm10). If you would like to use a custom reference for another species, please refer to the optional commands.
+Download the genome.fa and genes.gtf files, and place them in the appropriate refDB/species/ folder.  
+##### Human
+++link
+```
+
+```
+
+##### Mouse
+```
+wget http://igenomes.illumina.com.s3-website-us-east-1.amazonaws.com/Mus_musculus/UCSC/mm10/Mus_musculus_UCSC_mm10.tar.gz 
+```
+
 
 ## Usage ##
 ### Quick Star
@@ -34,6 +49,9 @@ To verify your installation and run a example.
 ```bash
 bash IFDlong.sh -o output_directory -n sample_name -i input_file -l "self_align" -g "hg38" -t 9 -a 10 -c 1
 ```
+
+#### Demo
++++
 
 ### Run IFDlong Pipeline
 Our tool accepts both FASTQ and BAM files as input. If using FASTQ, it will be aligned using Minimap2. If using BAM, please ensure the files are already aligned and indexed.
