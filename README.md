@@ -7,10 +7,10 @@ IFDlong is a bioinformatics pipeline that can perform long-read RNA-seq annotati
 
 ## Installation ##
 ### Dependencies ###
-R (≥ 4.0.0) along with a compatible version of gcc.  
+R (≥ 4.4.0) along with a compatible version of gcc (12.2.0).  
 The following tools are required for running IFDlong: minimap2 (≥ 2.17), bedtools (≥ 2.29), and samtools (≥ 1.9)  
 If these tools are not already installed, they will be installed automatically during the install.sh step.
-Required R packages include: rlist, parallel, stringr, dplyr, seqRFLP, BiocManager, rtracklayer, and Biostrings.
+Required R packages include: rlist, parallel, stringr, dplyr, Rcpp, seqRFLP, BiocManager, rtracklayer, and Biostrings.
 These packages will also be installed automatically during processing.
 
 ### Installation pipeline ###
