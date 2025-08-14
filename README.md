@@ -25,7 +25,7 @@ bash install.sh
 Methods2: Install via conda
 ```
 git clone https://github.com/wenjiaking/IFDlong.git
-conda env create -n IFDlong -f IFDlong.yaml
+conda env create -f IFDlong.yaml
 ```
 
 ## Installation Reference Database ##
