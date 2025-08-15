@@ -248,6 +248,53 @@ check_tool "samtools" || exit 1
 check_tool "bedtools" || exit 1
 check_tool "minimap2" || exit 1
 
+#### check the reference genome and gene 
+# URLs for downloading genome and GTF (can be updated)
+declare -A GENOME_URL
+declare -A GTF_URL
+
+GENOME_URL[hg38]="http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz"
+GTF_URL[hg38]="http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/genes/hg38.gtf.gz"
+
+GENOME_URL[mm10]="http://hgdownload.soe.ucsc.edu/goldenPath/mm10/bigZips/mm10.fa.gz"
+GTF_URL[mm10]="http://hgdownload.soe.ucsc.edu/goldenPath/mm10/bigZips/genes/mm10.gtf.gz"
+
+FA=$(ls "$codeBase/refData/$ghc/"*.fa | head -n 1)
+GTF=$(ls "$codeBase/refData/$ghc/"*.gtf | head -n 1)
+
+# -------------------------
+# Download if missing
+# -------------------------
+if [ ! -f "$FA" ]; then
+    echo "Downloading $ghc FASTA..."
+    wget -O "$codeBase/refData/$ghc/genome.all.fa.gz" "${GENOME_URL[$ghc]}"
+    gunzip -f "$codeBase/refData/$ghc/genome.all.fa.gz"
+fi
+
+if [ ! -f "$GTF" ]; then
+    echo "Downloading $GENOME GTF..."
+    wget -O "$codeBase/refData/$ghc/genes.all.gtf.gz" "${GTF_URL[$ghc]}"
+    gunzip -f "$codeBase/refData/$ghc/genes.all.gtf.gz"
+fi
+
+
+#### Keep only main chromosomes
+echo "Filtering main chromosomes for $GENOME..."
+
+MAIN_FA="$codeBase/refData/$ghc/genome.fa"
+MAIN_GTF="$codeBase/refData/$ghc/genes.gtf"
+
+# Filter FASTA
+awk '/^>/ {p=($0 ~ /^>chr([1-9]|1[0-9]|2[0-2]|X|Y)$/)} p' $codeBase/refData/$ghc/genome.all.fa > "$MAIN_FA"
+rm $codeBase/refData/$ghc/genome.all.fa
+
+# Filter GTF
+awk '$1 ~ /^chr([1-9]|1[0-9]|2[0-2]|X|Y)$/ {print}' $codeBase/refData/$ghc/genes.all.gtf > "$MAIN_GTF"
+rm $codeBase/refData/$ghc/genes.all.gtf
+
+echo "Done! Main chromosomes saved:"
+echo "FASTA: $MAIN_FA"
+echo "GTF  : $MAIN_GTF"
 
 
 ### Main ###
@@ -257,15 +304,14 @@ echo "Pipeline Begin $(date '+%Y-%m-%d %H:%M:%S')"
 ######## ref file path
 refFile=$codeBase/refData/$ghc/allexon_NO.bed
 refFiletol=$codeBase/refData/$ghc/gene_range_tol500.bed
-genomeDir=$codeBase/refData/$ghc/genome.fa
-
+genomeDir=$(ls "$codeBase/refData/$ghc/"*.fa | head -n 1)
+refGTFFile=$(ls "$codeBase/refData/$ghc/"*.gtf | head -n 1)
 
 buffer="${bufferLen:-9}"
 anchorLen="${anchorLen:-10}"
 refAAFile=$codeBase/refData/$ghc/isoformAA.txt
 refPseudoFile=$codeBase/refData/$ghc/refData/pseudogenes.rds
 refRootFile=$codeBase/refData/$ghc/rootName.txt
-refGTFFile=$codeBase/refData/$ghc/genes.gtf
 hmmatchFile=$codeBase/refData/$ghc/hg_mm_match.rds
 
 ## Path to scripts used by the IFDlong pipeline
