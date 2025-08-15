@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+set -uo pipefail
 
 echo "Command: $0 $@"
 
@@ -138,6 +138,8 @@ fi
 
 ######## default parameter
 #Aligner="self_align"
+sample=""
+inFile=""
 ghc="hg38"
 ncores=1
 mainPath="output"
@@ -201,27 +203,21 @@ while [[ $# -gt 0 ]]; do
 done
 
 ### Required Argument Validation ###
-missing_arg=false
-
-if [ -z "$sample" ] && [ -n "$inFile" ]; then
-  sample=$(basename "$inFile")
-  sample="${sample%%.*}"
-  echo "Sample name not provided. Using '$sample' from input file."
-fi
-
-if [ -z "$mainPath" ]; then
-  echo "Sample name not provided. Using '$mainPath' as default."
-  missing_arg=true
-fi
-
 if [ -z "$inFile" ]; then
   echo "Missing required option: -i|--inFile (input file)"
   missing_arg=true
 fi
 
-if [ "$missing_arg" = true ]; then
-  echo
-  print_help_and_exit
+if [ -z "${sample:-}" ]; then
+  sample=$(basename "$inFile")
+  sample="${sample%%.*}"
+  echo "Sample name not provided. Using '$sample' from input file."
+fi
+
+# Ensure output directory is set
+if [ -z "${mainPath:-}" ]; then
+  mainPath="output"
+  echo "Output directory not provided. Using default: '$mainPath'."
 fi
 
 echo "Initialization complete."
@@ -276,6 +272,7 @@ hmmatchFile=$codeBase/refData/$ghc/hg_mm_match.rds
 echo $codeBase
 EXONuncover="${codeBase}/scripts/EXONuncover.R"
 report="${codeBase}/scripts/Reportcpp.r"
+speedup="${codeBase}/scripts/speedup.cpp"
 quant="${codeBase}/scripts/quant.R"
 
 
