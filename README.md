@@ -61,7 +61,7 @@ Our tool accepts both FASTQ and BAM files as input. If using FASTQ, it will be a
 
 Running with default settings:
 ```bash
-bash IFDlong.sh -o output_directory -n sample_name -b input_BAM_file -l "self_align" -g "hg38" -t 9 -a 10 -c 1
+bash IFDlong.sh -o output_directory -n sample_name -i input_file -l "self_align" -g "hg38" -t 9 -a 10 -c 1
 ```
 
 Required options:
@@ -69,12 +69,12 @@ Required options:
 -h, --help        Check the usage.
 -o, --outDir      The directory to save the output
 -n, --name        The sample name
--i, --inFile      Input file <sampleID.fq.gz>|<sampleID.bam>
+-i, --inFile      Input file <sampleID.fq.gz>|<sampleID.bam> [fastq/fq/fq.gz/fa/fasta/fa.gz/bam]
 -l, --aligner     The aligner used to generated the bam file. Set to be self_align if missing.
 -g, --ghc         Human (hg38), mouse (mm10) or other self-defined species (the same value as -g in refDataSetup.sh), hg38 by default
 -t, --bufferLen   The buffer length for novel isoform identification, 9 by default
 -a, --anchorLen   The anthor length for fusion filtering, 10 by default
--c, --ncores      How many cores are assigned to run the pipeline in parallel. Use single core by default
+-c, --ncores      How many cores are assigned to run the pipeline in parallel. Use 4 core by default
 
 ```
 
