@@ -39,8 +39,7 @@ ncores <- as.integer(args[12])
 speedup <- args[13]
 
 # Compile C++ (point to where you saved the file)
-getwd()
-Rcpp::sourceCpp("speedup")
+Rcpp::sourceCpp(speedup)
 
 ### ref files
 allCDS <- fread(refEXON, col.names = c("chr", "start", "end", "name", "score", "strand"))
