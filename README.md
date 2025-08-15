@@ -26,6 +26,7 @@ Methods2: Install via conda
 ```
 git clone https://github.com/wenjiaking/IFDlong.git
 conda env create -f IFDlong.yaml
+conda activate IFDlong
 ```
 
 ## Installation Reference Database ##
