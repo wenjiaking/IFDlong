@@ -78,6 +78,15 @@ Required options:
 
 ```
 
+## OUTPUT FORMAT ##
+Two files, **\[sampleID]\_Isof\_quant.csv** and **\[sampleID]\_Fusion\_quant.csv**, will be generated in the output folder.
+1. Isof_quant.csv contains the following columns:
+isoform, gene, group, prop, count
+2. Fusion_quant.csv contains the following columns:
+fusion, gene, group, prop, count, fusion_counts, gene_counts
+
+
+
 ## Citation ##
 The study describing the IFDlong method can be found in: 
 
