@@ -158,3 +158,6 @@ dependencies:
   - r-vctrs
   - r-viridislite
   - r-vroom
+  - samtools
+  - bedtools
+  - minimap2
