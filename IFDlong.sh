@@ -13,11 +13,11 @@ usage() {
     echo "  -o, --outDir      The directory to save the output."
     echo "  -n, --name        The sample name."
     echo "  -i, --inFile      Input FASTQ file of long read RNAseq data OR BAM file after alignment and indexing."
-    echo "  -l, --aligner     The aligner used to generated the bam file. set to be self_align if missing"
+    echo "  -l, --aligner     The aligner used to generate the BAM file; set it to self_align if the input format is BAM."
     echo "  -g, --ghc         Human (hg38), mouse (mm10) or other self-defined species (the same value as -g in refDataSetup.sh), hg38 by default"
     echo "  -t, --bufferLen   The buffer length for novel isoform identification, 9 by default."
     echo "  -a, --anchorLen   The anthor length for fusion filtering, 10 by default."
-    echo "  -c, --ncores      How many cores are assigned to run the pipeline in parallel. Use single core by default"
+    echo "  -c, --ncores      How many cores are assigned to run the pipeline in parallel. Use 4 core by default"
 
     echo "    Questions or issues? Contact: Silvia (shl96[at].pitt.edu)"
     echo "    Modified date: 08 Aug. 2025"
@@ -255,7 +255,6 @@ check_tool "minimap2" || exit 1
 
 
 ### Main ###
-
 echo "Pipeline Begin $(date '+%Y-%m-%d %H:%M:%S')"
 
 
@@ -274,15 +273,10 @@ refGTFFile=$codeBase/refData/$ghc/genes.gtf
 hmmatchFile=$codeBase/refData/$ghc/hg_mm_match.rds
 
 ## Path to scripts used by the IFDlong pipeline
-#reportFuns="${codeBase}/scripts/reportFuns.R"
-#reportFuns_parallel="${codeBase}/scripts/reportFuns_parallel.R"
 echo $codeBase
 EXONuncover="${codeBase}/scripts/EXONuncover.R"
 report="${codeBase}/scripts/Reportcpp.r"
 quant="${codeBase}/scripts/quant.R"
-refGen="${codeBase}/scripts/refGen.R"
-refAAGen="${codeBase}/scripts/refAAGen.R"
-
 
 
 symlink_path
