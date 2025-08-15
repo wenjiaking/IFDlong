@@ -329,6 +329,22 @@ blocks
 anno
 quant
 
+if [ -f "$outPath/${sample}_mapped_woSecond_intersectS_buffer9bp_Isof_quant.csv" ]; then
+    cp "$outPath/${sample}_mapped_woSecond_intersectS_buffer9bp_Isof_quant.csv" "$mainPath/${sample}_Isof_quant.csv"
+else
+    echo "Warning: Isof quant results not found. If you encounter any issues, feel free to report them on GitHub."
+fi
+
+# Copy Fusion quant file if it exists
+if [ -f "$outPath/${sample}_mapped_woSecond_intersectS_buffer9bp_Fusion_quant_anchor10bp.csv" ]; then
+    cp "$outPath/${sample}_mapped_woSecond_intersectS_buffer9bp_Fusion_quant_anchor10bp.csv" "$mainPath/${sample}_Fusion_quant.csv"
+else
+    echo "Warning: Fusion quant results not found. If you encounter any issues, feel free to report them on GitHub."
+fi
+
+
+
+
 echo "Completed!!!!!"
 
 echo LOG END $(date '+%Y-%m-%d %H:%M:%S')
