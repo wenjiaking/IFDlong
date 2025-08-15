@@ -45,12 +45,13 @@ wget http://igenomes.illumina.com.s3-website-us-east-1.amazonaws.com/Mus_musculu
 
 ## Usage ##
 ### Quick Start
-To verify your installation and run a example.
 ```bash
 bash IFDlong.sh -o output_directory -n sample_name -i input_file -l "self_align" -g "hg38" -t 9 -a 10 -c 1
 ```
 
 #### Demo
+To verify your installation and run a example.
+
 ```
 bash IFDlong.sh -o out -n example -i example/demo.fq.gz -g "hg38" -t 9 -a 10 -c 1
 ```
