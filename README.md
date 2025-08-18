@@ -31,17 +31,27 @@ conda activate IFDlong
 
 ## Installation Reference Database ##
 Our tools include built-in support for human (hg38) and mouse (mm10) reference datasets.
-**Note:** Genome and annotation files are not included due to their large size. Please download the corresponding genome.fa and genes.gtf files from the UCSC Genome Browser [illumina iGenomes](https://support.illumina.com/sequencing/sequencing_software/igenome.html). Then place the downloaded files in the appropriate refDB/species/ folder. If the files are missing, the script can automatically detect and download them, though this may take additional time.  
+**Note:** Genome and annotation files are not included due to their large size.   
+Methods1: 
+Please download the corresponding genome.fa and genes.gtf files from the UCSC Genome Browser [illumina iGenomes](https://support.illumina.com/sequencing/sequencing_software/igenome.html). Then place the downloaded files in the appropriate refDB/species/ folder. 
 ##### Human
 ```
 wget http://igenomes.illumina.com.s3-website-us-east-1.amazonaws.com/Homo_sapiens/UCSC/hg38/Homo_sapiens_UCSC_hg38.tar.gz
 ```
-
 ##### Mouse
 ```
 wget http://igenomes.illumina.com.s3-website-us-east-1.amazonaws.com/Mus_musculus/UCSC/mm10/Mus_musculus_UCSC_mm10.tar.gz 
 ```
-
+Methods2:  
+Run the script to auto-download hg38/mm10; see *refDataSetup* for other references.   
+``` bash
+bash Datasetup.sh -g hg38
+```
+Required options:
+```
+-h, --help        Check the usage.
+-g, --ghc         Human (hg38), mouse (mm10), hg38 by default
+```
 
 ## Usage ##
 ### Quick Start
