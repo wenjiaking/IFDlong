@@ -113,7 +113,7 @@ blocks () {
 
 anno () {
     echo Begin isoform annotation $(date '+%Y-%m-%d %H:%M:%S')
-    $Rscript $report $mainPath $sample $Aligner $buffer $anchorLen $refFile $refAAFile $refPseudoFile $refRootFile $hmmatchFile $ghc $ncores
+    $Rscript $report $mainPath $sample $Aligner $buffer $anchorLen $refFile $refAAFile $refPseudoFile $refRootFile $hmmatchFile $ghc $ncores $speedup
     echo Isoform annotation done! $(date '+%Y-%m-%d %H:%M:%S')
 }
 
