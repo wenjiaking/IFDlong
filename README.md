@@ -77,9 +77,9 @@ bash IFDlong.sh -o output_directory -n sample_name -i input_file -l "self_align"
 Required options:
 ```
 -h, --help        Check the usage.
--o, --outDir      The directory to save the output
--n, --name        The sample name
--i, --inFile      Input file <sampleID.fq.gz>|<sampleID.bam> [fastq/fq/fq.gz/fa/fasta/fa.gz/bam]
+-o, --outDir      Output directory to save results
+-n, --name        Sample name prefix
+-i, --inFile      Input file (supported formats: .fq, .fq.gz, .fastq, .fastq.gz, .fa, .fa.gz, .fasta, .fasta.gz, .bam)
 -l, --aligner     The aligner used to generated the bam file. Set to be self_align if missing.
 -g, --ghc         Human (hg38), mouse (mm10) or other self-defined species (the same value as -g in refDataSetup.sh), hg38 by default
 -t, --bufferLen   The buffer length for novel isoform identification, 9 by default
