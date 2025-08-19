@@ -56,14 +56,14 @@ Required options:
 ## Usage ##
 ### Quick Start
 ```bash
-bash IFDlong.sh -o output_directory -n sample_name -i input_file -l "self_align" -g "hg38" -t 9 -a 10 -c 1
+bash IFDlong.sh -o output_directory -n sample_name -i input_file -l "self_align" -g "hg38" -t 9 -a 10
 ```
 
 #### Demo
 To verify your installation and run a example.
 
 ```
-bash IFDlong.sh -o out -n example -i example/demo.fq.gz -g "hg38" -t 9 -a 10 -c 1
+bash IFDlong.sh -o out -n example -i example/demo.fq.gz -g "hg38" -t 9 -a 10
 ```
 
 ### Run IFDlong Pipeline
@@ -71,7 +71,7 @@ Our tool accepts both FASTQ and BAM files as input. If using FASTQ, it will be a
 
 Running with default settings:
 ```bash
-bash IFDlong.sh -o output_directory -n sample_name -i input_file -l "self_align" -g "hg38" -t 9 -a 10 -c 1
+bash IFDlong.sh -o output_directory -n sample_name -i input_file -l "self_align" -g "hg38" -t 9 -a 10
 ```
 
 Required options:
