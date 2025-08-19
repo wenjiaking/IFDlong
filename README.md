@@ -33,7 +33,7 @@ conda activate IFDlong
 Our tools include built-in support for human (hg38) and mouse (mm10) reference datasets.
 **Note:** Genome and annotation files are not included due to their large size.   
 Methods1: 
-Please download the corresponding genome.fa and genes.gtf files from the UCSC Genome Browser [illumina iGenomes](https://support.illumina.com/sequencing/sequencing_software/igenome.html). Then place the downloaded files in the appropriate refDB/species/ folder. 
+Please download the corresponding genome.fa and genes.gtf files from the UCSC Genome Browser [illumina iGenomes](https://support.illumina.com/sequencing/sequencing_software/igenome.html). Then place the downloaded files in the appropriate refData/species/ folder. 
 ##### Human
 ```
 wget http://igenomes.illumina.com.s3-website-us-east-1.amazonaws.com/Homo_sapiens/UCSC/hg38/Homo_sapiens_UCSC_hg38.tar.gz
