@@ -19,7 +19,7 @@ It will automatically install the dependent tools and put their paths to the `to
 ```bash
 git clone https://github.com/wenjiaking/IFDlong.git
 cd IFDlong
-bash install.sh
+bash Install.sh
 ```
 
 Methods2: Install via conda
