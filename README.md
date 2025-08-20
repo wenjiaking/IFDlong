@@ -100,4 +100,6 @@ fusion, gene, group, prop, count, fusion_counts, gene_counts
 ## Citation ##
 The study describing the IFDlong method can be found in: 
 
+## License ##
+The software is under the MIT License. Please see the LICENSE file for details.
 
