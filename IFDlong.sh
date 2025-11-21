@@ -21,6 +21,7 @@ usage() {
 
     echo "    Questions or issues? Contact: Silvia (shl96[at].pitt.edu)"
     echo "    Modified date: 08 Aug. 2025"
+    echo "    Modified date: 21 Nov. 2025"
 }
 
 
@@ -113,7 +114,7 @@ blocks () {
 
 anno () {
     echo Begin isoform annotation $(date '+%Y-%m-%d %H:%M:%S')
-    $Rscript $report $mainPath $sample $Aligner $buffer $anchorLen $refFile $refAAFile $refPseudoFile $refRootFile $hmmatchFile $ghc $ncores $speedup
+    $Rscript $report $mainPath $sample $Aligner $buffer $anchorLen $refFile $refAAFile $refPseudoFile $refRootFile $hmmatchFile $ghc $ncores
     echo Isoform annotation done! $(date '+%Y-%m-%d %H:%M:%S')
 }
 
@@ -262,15 +263,14 @@ refGTFFile=$(ls "$codeBase/refData/$ghc/"*.gtf | head -n 1)
 buffer="${bufferLen:-9}"
 anchorLen="${anchorLen:-10}"
 refAAFile=$codeBase/refData/$ghc/isoformAA.txt
-refPseudoFile=$codeBase/refData/$ghc/refData/pseudogenes.rds
+refPseudoFile=$codeBase/refData/$ghc/pseudogenes.rds
 refRootFile=$codeBase/refData/$ghc/rootName.txt
-hmmatchFile=$codeBase/refData/$ghc/hg_mm_match.rds
+hmmatchFile=$codeBase/refData/$ghc/Hg_Mm_match.rds
 
 ## Path to scripts used by the IFDlong pipeline
 echo $codeBase
 EXONuncover="${codeBase}/scripts/EXONuncover.R"
-report="${codeBase}/scripts/Reportcpp.r"
-speedup="${codeBase}/scripts/speedup.cpp"
+report="${codeBase}/scripts/Report.r"
 quant="${codeBase}/scripts/quant.R"
 
 
