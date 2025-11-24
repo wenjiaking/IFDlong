@@ -98,7 +98,7 @@ files=(
   "$codeBase/refData/$ghc/isoformAA.txt"
   "$codeBase/refData/$ghc/pseudogenes.rds"
   "$codeBase/refData/$ghc/rootName.txt"
-  "$codeBase/refData/$ghc/hg_mm_match.rds"
+  "$codeBase/refData/$ghc/Hm_Mm_match.rds"
   "$codeBase/refData/$ghc/allexon_NO.bed"
   "$codeBase/refData/$ghc/gene_range_tol500.bed"
 )
