@@ -64,6 +64,11 @@ align () {
       mkdir -p "$outPath"
     
       $minimap2 -ax splice "$genomeDir" "$inFile" -t "$ncores" | samtools view -Sb | samtools sort -o $BAMfile
+      if [[ $? -ne 0 ]]; then
+          echo "[ERROR] Alignment pipeline failed (out of memory)!" >&2
+          exit 1
+      fi
+      
       echo Alignment Done $(date '+%Y-%m-%d %H:%M:%S')
       echo samtools index
       $samtools index $BAMfile 
@@ -79,7 +84,7 @@ align () {
       BAMfile=$inFile
     
     else
-      echo "Unsupported file format: $ext"
+      echo "[ERROR] Unsupported file format: $ext"
       exit 1
     fi
 
