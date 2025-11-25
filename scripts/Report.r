@@ -538,7 +538,7 @@ Sys.time()
 
 df1_summary[df1_summary$note == "continuous CDS and edge-matching", ] <- df1_summary_cont
 
-table(df1_summary$note)
+print(table(df1_summary$note))
 
 
 #### add ref 
@@ -578,8 +578,8 @@ df1_summary <- df1_summary %>%
  ungroup()
 
 #head(df1_summary)
-table(df1_summary$note)
-table(df1_summary$fusion)
+#table(df1_summary$note)
+#table(df1_summary$fusion)
 
 #########################
 ####### the df2 fusion part
@@ -735,7 +735,7 @@ Sys.time()
 
 df2_summary[df2_summary$note == "continuous CDS and edge-matching", ] <- df2_summary_cont
 
-table(df2_summary$note)
+print(table(df2_summary$note))
 
 
 
@@ -871,8 +871,8 @@ df2_summary_grouped <- df_counts22%>%
    .groups = "drop"
  )
 
-head(df2_summary_grouped)
-table(df2_summary_grouped$fusion)
+#head(df2_summary_grouped)
+print(table(df2_summary_grouped$fusion))
 
 collist <- c("SampleID","gene","gene_strand","isoform","position","nblock","NO.Exon","nExon_isof","length_isof","fusion","note","type")
 df1_summary <- df1_summary[, collist]
