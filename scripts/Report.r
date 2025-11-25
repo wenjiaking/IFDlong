@@ -14,7 +14,7 @@ suppressPackageStartupMessages({
     }
   }
   
-  install_and_load(c("Rcpp", "data.table", "parallel", "stringr", "rlist", "dplyr", "purrr"))
+  install_and_load(c("data.table", "parallel", "stringr", "rlist", "dplyr", "purrr"))
 })
 
 
