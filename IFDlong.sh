@@ -270,7 +270,7 @@ anchorLen="${anchorLen:-10}"
 refAAFile=$codeBase/refData/$ghc/isoformAA.txt
 refPseudoFile=$codeBase/refData/$ghc/pseudogenes.rds
 refRootFile=$codeBase/refData/$ghc/rootName.txt
-hmmatchFile=$codeBase/refData/$ghc/Hg_Mm_match.rds
+hmmatchFile=$codeBase/refData/$ghc/Hm_Mm_match.rds
 
 ## Path to scripts used by the IFDlong pipeline
 echo $codeBase
