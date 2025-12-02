@@ -368,6 +368,50 @@ any((start_val >= (ref_sub$start - buffer) & start_val <= (ref_sub$end + buffer)
       (end_val >= (ref_sub$start - buffer) & end_val <= (ref_sub$end + buffer)))
 }
 
+combine_all_cols <- function(df) {
+  # Ensure all columns have names
+  if (any(names(df) == "")) {
+    names(df)[names(df) == ""] <- paste0("V", seq_len(sum(names(df) == "")))
+  }
+  
+  # Group by position
+  pos_groups <- df %>%
+    group_by(position) %>%
+    summarise(across(everything(), ~list(.x)), .groups = "drop")
+  
+  # If only 1 unique position, combine all rows with &
+  if (nrow(pos_groups) == 1) {
+    combined <- pos_groups %>%
+      mutate(across(everything(), ~paste(.x[[1]], collapse = "&")))
+    return(combined)
+  }
+  
+  # All pairwise position combinations
+  idx <- combn(nrow(pos_groups), 2)
+  
+  # Initialize a named list to hold final column values
+  final_combined <- setNames(vector("list", length = ncol(pos_groups)), names(pos_groups))
+  final_combined <- map(final_combined, ~character(0))
+  
+  for (k in seq_len(ncol(idx))) {
+    i <- idx[, k]
+    row1 <- pos_groups[i[1], ]
+    row2 <- pos_groups[i[2], ]
+    
+    for (colname in names(pos_groups)) {
+      cross <- expand.grid(row1[[colname]][[1]], row2[[colname]][[1]], stringsAsFactors = FALSE)
+      combined <- paste0(cross$Var1, "&", cross$Var2)
+      final_combined[[colname]] <- c(final_combined[[colname]], combined)
+    }
+  }
+  
+  # Collapse each column by #
+  final_combined <- map(final_combined, ~paste(.x, collapse = "#"))
+  
+  # Return as flat tibble
+  tibble::as_tibble(final_combined)
+}
+
 gene_counts <- match_info%>%
  filter(gene != "undefined")%>%
  group_by(SampleID) %>%
@@ -585,6 +629,10 @@ df1_summary <- df1_summary %>%
 ####### the df2 fusion part
 #head(df2)
 
+if (nrow(df2) == 0) {
+  message("No fusion reads detected.") 
+  } else {
+
 Sys.time()
 df2_summary <- df2%>%
  group_by(SampleID, gene)%>%
@@ -770,8 +818,7 @@ df2_summary <- df2_summary %>%
  ) %>%
  ungroup()
 
-head(df2_summary)
-
+#head(df2_summary)
 
 
 ########### v2
@@ -788,50 +835,6 @@ df_counts21 <- df_counts%>%
   filter(n_rows > 2) %>%
   select(-n_rows)
 
-
-combine_all_cols <- function(df) {
-  # Ensure all columns have names
-  if (any(names(df) == "")) {
-    names(df)[names(df) == ""] <- paste0("V", seq_len(sum(names(df) == "")))
-  }
-  
-  # Group by position
-  pos_groups <- df %>%
-    group_by(position) %>%
-    summarise(across(everything(), ~list(.x)), .groups = "drop")
-  
-  # If only 1 unique position, combine all rows with &
-  if (nrow(pos_groups) == 1) {
-    combined <- pos_groups %>%
-      mutate(across(everything(), ~paste(.x[[1]], collapse = "&")))
-    return(combined)
-  }
-  
-  # All pairwise position combinations
-  idx <- combn(nrow(pos_groups), 2)
-  
-  # Initialize a named list to hold final column values
-  final_combined <- setNames(vector("list", length = ncol(pos_groups)), names(pos_groups))
-  final_combined <- map(final_combined, ~character(0))
-  
-  for (k in seq_len(ncol(idx))) {
-    i <- idx[, k]
-    row1 <- pos_groups[i[1], ]
-    row2 <- pos_groups[i[2], ]
-    
-    for (colname in names(pos_groups)) {
-      cross <- expand.grid(row1[[colname]][[1]], row2[[colname]][[1]], stringsAsFactors = FALSE)
-      combined <- paste0(cross$Var1, "&", cross$Var2)
-      final_combined[[colname]] <- c(final_combined[[colname]], combined)
-    }
-  }
-  
-  # Collapse each column by #
-  final_combined <- map(final_combined, ~paste(.x, collapse = "#"))
-  
-  # Return as flat tibble
-  tibble::as_tibble(final_combined)
-}
 
 # Apply per SampleID
 df2_summary_grouped1 <- df_counts21 %>%
@@ -873,13 +876,24 @@ df2_summary_grouped <- df_counts22%>%
 
 #head(df2_summary_grouped)
 print(table(df2_summary_grouped$fusion))
+}
 
 collist <- c("SampleID","gene","gene_strand","isoform","position","nblock","NO.Exon","nExon_isof","length_isof","fusion","note","type")
-df1_summary <- df1_summary[, collist]
-df2_summary_grouped <- df2_summary_grouped[, collist]
-df2_summary_grouped1 <- df2_summary_grouped1[, collist]
+dfs_to_bind <- list(df1_summary)
 
-com <- rbind(df1_summary, df2_summary_grouped, df2_summary_grouped1)
+if (exists("df2_summary_grouped")) {
+  dfs_to_bind <- c(dfs_to_bind, list(df2_summary_grouped))
+}
+
+if (exists("df2_summary_grouped1")) {
+  dfs_to_bind <- c(dfs_to_bind, list(df2_summary_grouped1))
+}
+
+# Apply column selection and rbind
+com <- do.call(
+  rbind,
+  lapply(dfs_to_bind, function(x) x[, collist])
+)
 head(com)
 
 write.table(com, coverSReOut, row.names = FALSE, sep = ',')
