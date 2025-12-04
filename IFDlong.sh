@@ -230,23 +230,30 @@ echo "Initialization complete."
 
 
 ##### check the dependencies
-Rscript=$(which Rscript)
-samtools=$(which samtools)
-bedtools=$(which bedtools)
-minimap2=$(which minimap2)
+#Rscript=$(which Rscript)
+#samtools=$(which samtools)
+#bedtools=$(which bedtools)
+#minimap2=$(which minimap2)
 
 check_tool() {
-    tool_name=$1
-    tool_path=$(which "$tool_name" 2>/dev/null)
+    tool_name="$1"
 
-    if [ -z "$tool_path" ]; then
+    # Get all paths
+    mapfile -t tool_paths < <(which -a "$tool_name" 2>/dev/null)
+
+    # If none found
+    if [ ${#tool_paths[@]} -eq 0 ]; then
         echo "Error: $tool_name not found in PATH."
         return 1
-    else
-        echo "$tool_name found at: $tool_path"
-        eval "$tool_name=$tool_path"
     fi
+
+    # Choose the last path (latest one in PATH order)
+    tool_path="${tool_paths[-1]}"
+
+    echo "$tool_name found at: $tool_path"
+    eval "${tool_name}='$tool_path'"
 }
+
 
 # List of required tools
 check_tool "Rscript" || exit 1
