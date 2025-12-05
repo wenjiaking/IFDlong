@@ -33,7 +33,10 @@ fusion.quantRData=paste0(PATH,"/",Aligner,"/",sampleName,"_buffer",buffer,"bp_te
 ############ load 
 Report <- read.csv(reportfile)
 fusionRep <- read.csv(fusionfiltfile)
-gtf.dat <- read.table(refGTF, fill = TRUE)
+gtf.dat <- read.table(refGTF, sep="\t")
+tmp.gtf.split=strsplit(gtf.dat$V9, split="; ")
+gtf.dat$gene_id <- gsub("gene_id ","",sapply(tmp.gtf.split, function(x) return(x[startsWith(x,"gene_id ")])))
+gtf.dat$transcript_id <- gsub("transcript_id ","",sapply(tmp.gtf.split, function(x) return(x[startsWith(x,"transcript_id ")])))
 
 
 
@@ -272,7 +275,7 @@ quantList.gen <- function(Report, fusionRep, Isof.quantfile, Isof.quantRData, fu
       group <- c(group, rep(names(quantList)[i], length(quantList[[i]]$counts)))
     }
     
-    gene <- mclapply(isoform, function(x) unique(gtf.dat$V13[gtf.dat$V16 == x | gtf.dat$V19 == x]), mc.cores = mc)
+    gene <- mclapply(isoform, function(x) unique(gtf.dat$gene_id[gtf.dat$transcript_id == x]), mc.cores = mc)
     gene[sapply(gene, length) == 0] <- "undefined"
     
     isof_quant.dat <- data.frame(isoform = isoform, gene = unlist(gene), group = group, prop = prop, count = count)
@@ -313,7 +316,7 @@ quantList.gen <- function(Report, fusionRep, Isof.quantfile, Isof.quantRData, fu
           genes=c(genes,"undefined")
         }
         else {
-          genes=c(genes,unique(gtf.dat$V13[gtf.dat$V16==isofs[i] | gtf.dat$V19==isofs[i]]))
+          genes=c(genes,unique(gtf.dat$gene_id[gtf.dat$transcript_id==isofs[i]]))
         }
       }
       return(paste0(genes,collapse ="&"))
@@ -380,51 +383,6 @@ quantList.gen <- function(Report, fusionRep, Isof.quantfile, Isof.quantRData, fu
 }
 
 
-#### test
+#### main func
 quantList=quantList.gen(Report,fusionRep,Isof.quantfile,Isof.quantRData, fusion.quantfile,fusion.quantRData,gtf.dat,tol=1e-5,max.iter=200,mc=ncores)
 
-# 
-# #### Split Report into 20 Parts
-# split_report_parts <- Report %>%
-#   group_by(gene)%>%
-#   group_split() %>%
-#   { split(., cut(seq_along(.), 20, labels = FALSE)) } %>%
-#   lapply(dplyr::bind_rows)
-# 
-# 
-# #### Process Each Report Chunk then merged
-# merged_isof_quant <- list()
-# merged_fusion_quant <- list()
-# 
-# for (m in seq_along(split_report_parts)) {
-#   message("Processing chunk: ", m)
-#   Report_chunk <- split_report_parts[[m]]
-#   
-#   Isof.quantfile_chunk <- paste0(PATH, "/", Aligner, "/", sampleName, "_", m, "_mapped_woSecond_intersectS_buffer", buffer, "bp_Isof_quant.csv")
-#   Isof.quantRData_chunk <- paste0(PATH, "/", Aligner, "/", sampleName, "_", m, "_buffer", buffer, "bp_temp_Isof_quant.RData")
-#   
-#   result <- quantList.gen(Report_chunk, 
-#                           fusionRep, Isof.quantfile, Isof.quantRData, 
-#                           fusion.quantfile, fusion.quantRData, gtf.dat, tol=1e-5,
-#                           max.iter=200, mc=ncores)
-# 
-#   
-#   if (!is.null(result$isof_quant)) {
-#     merged_isof_quant[[m]] <- result$isof_quant
-#   }
-#   if (!is.null(result$fusion_quant)) {
-#     merged_fusion_quant[[m]] <- result$fusion_quant
-#   }
-# }
-# 
-# # Combine all chunks into one data frame each
-# final_isof_quant <- do.call(rbind, merged_isof_quant)
-# final_fusion_quant <- do.call(rbind, merged_fusion_quant)
-# 
-# # Optionally, write to CSV
-# write.csv(final_isof_quant, paste0(PATH, "/", Aligner, "/", sampleName, "_merged_Isof_quant.csv"), row.names = FALSE)
-# write.csv(final_fusion_quant, paste0(PATH, "/", Aligner, "/", sampleName, "_merged_Fusion_quant.csv"), row.names = FALSE)
-# 
-# 
-# 
-# 
