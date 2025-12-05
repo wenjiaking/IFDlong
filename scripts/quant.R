@@ -37,83 +37,60 @@ gtf.dat <- read.table(refGTF, fill = TRUE)
 
 
 
-EMperGene <- function(read_annot, tol=1e-5, max.iter=200) {
-  isoforms <- tryCatch({
-    strsplit(unlist(strsplit(read_annot$isoform, "#")), "\\|\\|")
-  }, error = function(e) {
-    if (grepl("non-character argument", e$message)) {
-      message("Warning: 'isoform' column contains non-character data. Skipping this chunk.")
-      return(NULL)
-    } else {
-      stop(e)  # re-throw other errors
-    }
-  })
+EMperGene=function(read_annot,tol=1e-5,max.iter=200) {
+  read_annot$isoform <- as.character(read_annot$isoform)
+  read_annot <- read_annot[!is.na(read_annot$isoform) & nchar(read_annot$isoform) > 0, ]
+  isoforms = strsplit(read_annot$isoform, "#")
+  isoforms = lapply(isoforms, function(x) unlist(strsplit(x, "\\|\\|")))
   
-  if (is.null(isoforms)) {
-    return(NULL)  # Skip processing if error happened
-  }
-  
-  theta0 <- prop.table(table(unlist(isoforms)))
-  
+  theta0=prop.table(table(unlist(isoforms)))
   if (!("undefined" %in% names(theta0))) {
-    theta0["undefined"] <- 0
+    theta0["undefined"]=0
   }
+  nr=nrow(read_annot)
+  mat_update=matrix(,nrow=nr,ncol = length(theta0))
+  colnames(mat_update)=names(theta0)
+  theta=Inf
+  niter=0
   
-  nr <- nrow(read_annot)
-  mat_update <- matrix(0, nrow=nr, ncol=length(theta0))
-  colnames(mat_update) <- names(theta0)
-  
-  theta <- rep(0, length(theta0))
-  names(theta) <- names(theta0)
-  
-  niter <- 0
-  
-  while (sqrt(sum((theta0 - theta)^2)) > tol && niter < max.iter) {
-    if (niter > 0) theta0 <- theta
-    niter <- niter + 1
-    
+  while(sqrt(sum((as.vector(theta0)-as.vector(theta))^2))>tol & (niter < max.iter)) {
+    if (niter>0) {theta0=theta}
+    niter=niter+1
     for (i in 1:nr) {
-      r <- read_annot[i, ]
+      r=read_annot[i,]
       
-      zknown <- (!grepl("#", r[1, 4])) & (!grepl("\\|\\|", r[1, 4]))
-      notes = tryCatch({
-        unlist(strsplit(as.character(r[1, 11]), "#"))
-      }, error = function(e) {
-        message("Warning: non-character data in r[1,11], skipping this row")
-        return(NA_character_)
-      })
-      
-      if (any(is.na(notes))) {
-        next
-      }
-      
-      if (any(notes == "continuous CDS and edge-matching")) {
-        if (zknown) {
-          mat_update[i, r[1, 4]] <- 1
-        } else {
-          isofs <- unlist(strsplit(unlist(strsplit(r[1, 4], "#")), "\\|\\|"))
-          # Normalize theta0 over isofs to avoid NA if sum==0
-          s <- sum(theta0[isofs])
-          if (s > 0) {
-            mat_update[i, isofs] <- theta0[isofs] / s
-          } else {
-            mat_update[i, isofs] <- 1 / length(isofs)
-          }
+      # len=sum(sapply(strsplit(strsplit(r[1,5],"#")[[1]],";"),function(x) {
+      #   pos=unlist(strsplit(x,":"))
+      #   lens=abs(as.numeric(pos[2])-as.numeric(pos[3]))
+      #   return(lens)
+      # }))
+      # print(len)
+      #f=summary(km_fit,len-1)$surv-summary(km_fit,len)$surv
+      zknown=(!grepl("#",r[1,4])) & (!grepl("\\|\\|",r[1,4]))
+      # & (r[1,11]=="continuous CDS and edge-matching")
+      notes=unlist(strsplit(r[1,11],"#"))
+      if (any(notes=="continuous CDS and edge-matching")) {
+        if(zknown) {mat_update[i,r[1,4]]=1}
+        else {
+          isofs=unlist(strsplit(unlist(strsplit(r[1,4],"#")),"\\|\\|"))
+          mat_update[i,isofs]=theta0[isofs]/sum(theta0[isofs])
         }
-      } else {
-        mat_update[i, "undefined"] <- 1
       }
+      else {
+        mat_update[i,"undefined"]=1
+      }
+      
     }
     
-    theta <- colSums(mat_update, na.rm = TRUE) / nr
+    theta=apply(mat_update,2,function(t) sum(t,na.rm = T)/length(t))
+    #print(theta)
+    
   }
-  
-  return(list(prop = theta, counts = theta * nr, niter = niter))
+  #print(niter)
+  return(list(prop=theta,counts=theta*nr,niter=niter))
 }
 
 quantBygene <- function(report.multigenes, report.uniquegene, tol=1e-5, max.iter=200, mc=30) {
-  require(parallel)
-  
   readBYgeneList <- list()
   n_multigenes <- length(unique(report.multigenes$gene))
   
@@ -136,6 +113,7 @@ quantBygene <- function(report.multigenes, report.uniquegene, tol=1e-5, max.iter
   
   multigenes <- unique(unlist(strsplit(names(quantBYgenesList), "#")))
   report.uniquegene <- report.uniquegene[!report.uniquegene$gene %in% multigenes, ]
+  dim(report.uniquegene)
   
   quantBYgeneList <- mclapply(1:length(unique(report.uniquegene$gene)), function(j) {
     g <- unique(report.uniquegene$gene)[j]
@@ -151,76 +129,83 @@ quantBygene <- function(report.multigenes, report.uniquegene, tol=1e-5, max.iter
 
 
 EMperGenefusion = function(read_annot, tol=1e-5, max.iter=200) {
-  genes = tryCatch({
-    unlist(strsplit(read_annot$isoform, "#"))
-  }, error = function(e) {
-    if (grepl("non-character argument", e$message)) {
-      message("Warning: 'isoform' column contains non-character data. Skipping this chunk.")
-      return(NULL)  # or return NA or empty vector if preferred
-    } else {
-      stop(e)  # re-throw other errors
-    }
-  })
-  
-  if (is.null(genes)) {
-    return(NULL)  # Skip processing if error happened
-  }
-  
-  isoforms = unlist(as.vector(sapply(genes, function(g) {
-    pair = unlist(strsplit(g, "&"))
-    pairlist = lapply(pair, function(x) unlist(strsplit(x, "\\|\\|")))
-    head = pairlist[[1]]
-    for (j in 2:length(pairlist)) {
-      head = as.vector(sapply(head, function(x) paste0(x, "&", pairlist[[j]])))
+  genes=unlist(strsplit(read_annot$isoform,"#"))
+  isoforms=unlist(as.vector(sapply(genes, function(g) {
+    pair=unlist(strsplit(g,"&"))
+    # head=unlist(strsplit(pair[1],"\\|\\|"))
+    # tail=unlist(strsplit(pair[2],"\\|\\|")) #only for fusions of two genes/isoforms
+    # return(as.vector(sapply(head,function(x) paste0(x,"&",tail))))
+    pairlist=lapply(pair, function(x) unlist(strsplit(x,"\\|\\|")))
+    head=pairlist[[1]]
+    for (i in 2:length(pairlist)) {
+      head=as.vector(sapply(head,function(x) paste0(x,"&",pairlist[[i]])))
     }
     return(head)
+    
   })))
-  isoforms[grepl("undefined", isoforms)] = "undefined"
-  isoforms[grepl("NA", isoforms)] = "undefined"
-  theta0 = prop.table(table(unlist(isoforms)))
+  isoforms[grepl("undefined",isoforms)]="undefined"
+  isoforms[grepl("NA",isoforms)]="undefined"
+  theta0=prop.table(table(unlist(isoforms)))
   if (!("undefined" %in% names(theta0))) {
-    theta0["undefined"] = 0
+    theta0["undefined"]=0
   }
-  nr = nrow(read_annot)
-  mat_update = matrix(0, nrow=nr, ncol=length(theta0))  # initialize with zeros
-  colnames(mat_update) = names(theta0)
-  theta = Inf
-  niter = 0
+  nr=nrow(read_annot)
+  mat_update=matrix(,nrow=nr,ncol = length(theta0))
+  colnames(mat_update)=names(theta0)
+  theta=Inf
+  niter=0
   
-  while(sqrt(sum((as.vector(theta0) - as.vector(theta))^2)) > tol & (niter < max.iter)) {
-    if (niter > 0) { theta0 = theta }
-    niter = niter + 1
+  while(sqrt(sum((as.vector(theta0)-as.vector(theta))^2))>tol & (niter < max.iter)) {
+    if (niter>0) {theta0=theta}
+    niter=niter+1
     for (i in 1:nr) {
-      r = read_annot[i,]
-      zknown = (!grepl("#", r[1,4])) & (!grepl("\\|\\|", r[1,4]))
-      notes = unlist(strsplit(r[1,11], "#"))
-      ng = str_count(notes[1], "&")
-      if (any(notes == paste0(rep("continuous CDS and edge-matching", ng + 1), collapse = "&") & !is.na(notes))) {
-        if (zknown) {
-          mat_update[i, r[1,4]] = 1
-        } else {
-          isofmulti = unlist(strsplit(r[1,4], "#"))
-          isofs = unlist(as.vector(sapply(isofmulti, function(g) {
-            pair = unlist(strsplit(g, "&"))
-            pairlist = lapply(pair, function(x) unlist(strsplit(x, "\\|\\|")))
-            head = pairlist[[1]]
-            for (j in 2:length(pairlist)) {
-              head = as.vector(sapply(head, function(x) paste0(x, "&", pairlist[[j]])))
+      r=read_annot[i,]
+      
+      # len=sum(sapply(strsplit(strsplit(r[1,5],"#")[[1]],";"),function(x) {
+      #   pos=unlist(strsplit(x,":"))
+      #   lens=abs(as.numeric(pos[2])-as.numeric(pos[3]))
+      #   return(lens)
+      # }))
+      # print(len)
+      #f=summary(km_fit,len-1)$surv-summary(km_fit,len)$surv
+      zknown=(!grepl("#",r[1,4])) & (!grepl("\\|\\|",r[1,4]))
+      # & (r[1,11]=="continuous CDS and edge-matching")
+      notes=unlist(strsplit(r[1,11],"#"))
+      ng=str_count(notes[1],"&")
+      if (any(notes==paste0(rep("continuous CDS and edge-matching",ng+1),collapse = "&") & !is.na(notes))) {
+        if(zknown) {mat_update[i,r[1,4]]=1}
+        else {
+          isofmulti=unlist(strsplit(r[1,4],"#"))
+          isofs=unlist(as.vector(sapply(isofmulti, function(g) {
+            pair=unlist(strsplit(g,"&"))
+            # head=unlist(strsplit(pair[1],"\\|\\|"))
+            # tail=unlist(strsplit(pair[2],"\\|\\|"))
+            # return(as.vector(sapply(head,function(x) paste0(x,"&",tail))))
+            pairlist=lapply(pair, function(x) unlist(strsplit(x,"\\|\\|")))
+            head=pairlist[[1]]
+            for (i in 2:length(pairlist)) {
+              head=as.vector(sapply(head,function(x) paste0(x,"&",pairlist[[i]])))
             }
             return(head)
           })))
-          isofs[grepl("undefined", isofs)] = "undefined"
-          isofs[grepl("NA", isofs)] = "undefined"
-          isofs = unique(isofs)
-          mat_update[i, isofs] = theta0[isofs] / sum(theta0[isofs])
+          isofs[grepl("undefined",isofs)]="undefined"
+          isofs[grepl("NA",isofs)]="undefined"
+          isofs=unique(isofs)
+          mat_update[i,isofs]=theta0[isofs]/sum(theta0[isofs])
         }
-      } else {
-        mat_update[i, "undefined"] = 1
       }
+      else {
+        mat_update[i,"undefined"]=1
+      }
+      
     }
-    theta = apply(mat_update, 2, function(t) sum(t, na.rm = TRUE) / length(t))
+    
+    theta=apply(mat_update,2,function(t) sum(t,na.rm = T)/length(t))
+    #print(theta)
+    
   }
-  return(list(prop = theta, counts = theta * nr, niter = niter))
+  #print(niter)
+  return(list(prop=theta,counts=theta*nr,niter=niter))
 }
 
 quantBygenefusion=function(report.multigenes,report.uniquegene,tol=1e-5,max.iter=200,mc=30) {
