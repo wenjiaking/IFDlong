@@ -432,122 +432,83 @@ print(dim(df2))
 Sys.time()
 df1_summary <- df1%>%
  group_by(SampleID)%>%
- summarise(
-   gene = first(gene),
-   gene_strand = first(strand),
-   
-   isoform_list = list(isoform),
-   order_list = list(order),
-   
-   # --- isoform selection logic with continuity priority ---
-   isoform = {
-     oiso <- unlist(isoform_list)
-     oord <- as.numeric(unlist(order_list))
-     if (any(oiso == "undefined")) {
-       "undefined"
-     } else {
-       # Split exon orders by isoform
-       iso_split <- split(oord, oiso)
-       
-       # Determine continuity for each isoform
-       iso_continuous <- sapply(iso_split, function(x) all(diff(sort(as.numeric(x))) == 1))
-       iso_counts <- sapply(iso_split, length)
-       
-       # Select best isoform: continuous first, then longest, then first alphabetically
-       if (any(iso_continuous)) {
-         continuous_iso <- names(iso_counts[iso_continuous])
-         chosen_iso <- continuous_iso[which.max(iso_counts[continuous_iso])]
-       } else {
-         chosen_iso <- names(iso_counts)[which.max(iso_counts)]
-       }
-       
-       # Combine all isoforms (sorted by rule) for output
-       iso_ordered <- names(sort(iso_counts, decreasing = TRUE))
-       paste(iso_ordered, collapse = "||")
-     }
-   },
-   
-   position = paste(paste(CDS_chr, CDS_start, CDS_end, CDS_strand, sep = ":"), collapse = ";"),
-   
-   # --- nblock: number of exons for the chosen isoform ---
-   nblock = {
-     oiso <- unlist(isoform_list)
-     oord <- as.numeric(unlist(order_list))
-     if (any(oiso == "undefined")) {
-       n()
-     } else {
-       iso_split <- split(oord, oiso)
-       iso_continuous <- sapply(iso_split, function(x) all(diff(sort(as.numeric(x))) == 1))
-       iso_counts <- sapply(iso_split, length)
-       if (any(iso_continuous)) {
-         continuous_iso <- names(iso_counts[iso_continuous])
-         chosen_iso <- continuous_iso[which.max(iso_counts[continuous_iso])]
-       } else {
-         chosen_iso <- names(iso_counts)[which.max(iso_counts)]
-       }
-       length(iso_split[[chosen_iso]])
-     }
-   },
-   
-   # --- NO.Exon: exon orders for the chosen isoform ---
-   NO.Exon = {
-     oiso <- unlist(isoform_list)
-     oord <- as.numeric(unlist(order_list))
-     if (any(oiso == "undefined")) {
-       NA
-     } else {
-       iso_split <- split(oord, oiso)
-       iso_continuous <- sapply(iso_split, function(x) all(diff(sort(as.numeric(x))) == 1))
-       iso_counts <- sapply(iso_split, length)
-       if (any(iso_continuous)) {
-         continuous_iso <- names(iso_counts[iso_continuous])
-         chosen_iso <- continuous_iso[which.max(iso_counts[continuous_iso])]
-       } else {
-         chosen_iso <- names(iso_counts)[which.max(iso_counts)]
-       }
-       paste(sort(as.numeric(iso_split[[chosen_iso]])), collapse = "-")
-     }
-   },
-   
-   nExon_isof = NA,
-   length_isof = NA,
-   fusion = "N",
-   
-   note = {
-     oiso <- unlist(isoform_list)
-     oord <- as.numeric(unlist(order_list))
-     if (any(oiso == "undefined")) {
-       "no full-covered isoform"
-     } else {
-       iso_split <- split(oord, oiso)
-       iso_continuous <- sapply(iso_split, function(x) all(diff(sort(as.numeric(x))) == 1))
-       if (any(iso_continuous)) {
-         "continuous CDS and edge-matching"
-       } else {
-         "discontinuous CDS"
-       }
-     }
-   },
-   
-   type = {
-     oiso <- unlist(isoform_list)
-     oord <- as.numeric(unlist(order_list))
-     if (any(oiso == "undefined")) {
-       "novel with addition"
-     } else {
-       iso_split <- split(oord, oiso)
-       iso_continuous <- sapply(iso_split, function(x) all(diff(sort(as.numeric(x))) == 1))
-       if (any(iso_continuous)) {
-         "normal"
-       } else {
-         "novel with deletion"
-       }
-     }
-   },
-   
-   .groups = "drop"
- ) %>%
- select(-isoform_list, -order_list)
+ group_modify(~{
+    
+    x <- .x
+    
+    # ---- Prepare isoform-level info ----
+    iso_info <- x %>%
+      group_split(isoform) %>%
+      map_df(function(g){
+        
+        # ensure numeric order
+        ord <- as.numeric(g$order)
+        
+        tibble(
+          isoform     = unique(g$isoform),
+          cds_len     = sum(g$CDS_end - g$CDS_start + 1),
+          continuous  = all(diff(sort(ord)) == 1),
+          nblock      = length(ord),
+          exon_order  = paste(sort(ord), collapse="-"),
+          pos_sig     = paste(g$CDS_chr, g$CDS_start, g$CDS_end, g$CDS_strand,
+                              sep=":", collapse=";")
+        )
+      })
+    
+    # ---- Isoform selection rules ----
+    if (any(iso_info$continuous)) {
+      
+      # Keep only continuous ones
+      iso_sub <- iso_info %>% filter(continuous)
+      
+      # Longest CDS among continuous
+      max_len <- max(iso_sub$cds_len)
+      iso_sub <- iso_sub %>% filter(cds_len == max_len)
+      
+      # If same length, keep all with identical CDS positions
+      chosen_pos <- iso_sub$pos_sig[1]
+      chosen_isoforms <- iso_sub %>% filter(pos_sig == chosen_pos) %>% pull(isoform)
+      
+    } else {
+      
+      # No continuous isoform → pick longest discontinuous
+      max_len <- max(iso_info$cds_len)
+      chosen_isoforms <- iso_info %>% filter(cds_len == max_len) %>% pull(isoform)
+    }
+    
+    # retrieve rows for chosen isoforms
+    chosen_rows <- x %>% filter(isoform %in% chosen_isoforms)
+    
+    # ---- Final summary ----
+    tibble(
+      SampleID   = unique(x$SampleID),
+      gene       = first(x$gene),
+      gene_strand= first(x$strand),
+      
+      isoform    = paste(chosen_isoforms, collapse="||"),
+      nblock     = n_distinct(chosen_rows$order),
+      NO.Exon    = paste(sort(unique(as.numeric(chosen_rows$order))), collapse="-"),
+      
+      position   = paste(
+        paste(x$CDS_chr, x$CDS_start, x$CDS_end, x$CDS_strand, sep=":"),
+        collapse=";"
+      ),
+      
+      fusion = "N",
+      
+      note = if (any(iso_info$continuous)) {
+        "continuous CDS and edge-matching"
+      } else {
+        "discontinuous CDS"
+      },
+      
+      type = if (any(iso_info$continuous)) {
+        "normal"
+      } else {
+        "novel with deletion"
+      }
+    )
+  })
 Sys.time()
 
 
@@ -635,123 +596,89 @@ if (nrow(df2) == 0) {
 
 Sys.time()
 df2_summary <- df2%>%
- group_by(SampleID, gene)%>%
- summarise(
-   gene = first(gene),
-   gene_strand = first(strand),
-   
-   isoform_list = list(isoform),
-   order_list = list(order),
-   
-   # --- isoform selection logic with continuity priority ---
-   isoform = {
-     oiso <- unlist(isoform_list)
-     oord <- as.numeric(unlist(order_list))
-     if (any(oiso == "undefined")) {
-       "undefined"
-     } else {
-       # Split exon orders by isoform
-       iso_split <- split(oord, oiso)
-       
-       # Determine continuity for each isoform
-       iso_continuous <- sapply(iso_split, function(x) all(diff(sort(as.numeric(x))) == 1))
-       iso_counts <- sapply(iso_split, length)
-       
-       # Select best isoform: continuous first, then longest, then first alphabetically
-       if (any(iso_continuous)) {
-         continuous_iso <- names(iso_counts[iso_continuous])
-         chosen_iso <- continuous_iso[which.max(iso_counts[continuous_iso])]
-       } else {
-         chosen_iso <- names(iso_counts)[which.max(iso_counts)]
-       }
-       
-       # Combine all isoforms (sorted by rule) for output
-       iso_ordered <- names(sort(iso_counts, decreasing = TRUE))
-       paste(iso_ordered, collapse = "||")
-     }
-   },
-   
-   position = paste(paste(CDS_chr, CDS_start, CDS_end, CDS_strand, sep = ":"), collapse = ";"),
-   
-   # --- nblock: number of exons for the chosen isoform ---
-   nblock = {
-     oiso <- unlist(isoform_list)
-     oord <- as.numeric(unlist(order_list))
-     if (any(oiso == "undefined")) {
-       n()
-     } else {
-       iso_split <- split(oord, oiso)
-       iso_continuous <- sapply(iso_split, function(x) all(diff(sort(as.numeric(x))) == 1))
-       iso_counts <- sapply(iso_split, length)
-       if (any(iso_continuous)) {
-         continuous_iso <- names(iso_counts[iso_continuous])
-         chosen_iso <- continuous_iso[which.max(iso_counts[continuous_iso])]
-       } else {
-         chosen_iso <- names(iso_counts)[which.max(iso_counts)]
-       }
-       length(iso_split[[chosen_iso]])
-     }
-   },
-   
-   # --- NO.Exon: exon orders for the chosen isoform ---
-   NO.Exon = {
-     oiso <- unlist(isoform_list)
-     oord <- as.numeric(unlist(order_list))
-     if (any(oiso == "undefined")) {
-       NA
-     } else {
-       iso_split <- split(oord, oiso)
-       iso_continuous <- sapply(iso_split, function(x) all(diff(sort(as.numeric(x))) == 1))
-       iso_counts <- sapply(iso_split, length)
-       if (any(iso_continuous)) {
-         continuous_iso <- names(iso_counts[iso_continuous])
-         chosen_iso <- continuous_iso[which.max(iso_counts[continuous_iso])]
-       } else {
-         chosen_iso <- names(iso_counts)[which.max(iso_counts)]
-       }
-       paste(sort(as.numeric(iso_split[[chosen_iso]])), collapse = "-")
-     }
-   },
-   
-   nExon_isof = NA,
-   length_isof = NA,
-   fusion = "N",
-   
-   note = {
-     oiso <- unlist(isoform_list)
-     oord <- as.numeric(unlist(order_list))
-     if (any(oiso == "undefined")) {
-       "no full-covered isoform"
-     } else {
-       iso_split <- split(oord, oiso)
-       iso_continuous <- sapply(iso_split, function(x) all(diff(sort(as.numeric(x))) == 1))
-       if (any(iso_continuous)) {
-         "continuous CDS and edge-matching"
-       } else {
-         "discontinuous CDS"
-       }
-     }
-   },
-   
-   type = {
-     oiso <- unlist(isoform_list)
-     oord <- as.numeric(unlist(order_list))
-     if (any(oiso == "undefined")) {
-       "novel with addition"
-     } else {
-       iso_split <- split(oord, oiso)
-       iso_continuous <- sapply(iso_split, function(x) all(diff(sort(as.numeric(x))) == 1))
-       if (any(iso_continuous)) {
-         "normal"
-       } else {
-         "novel with deletion"
-       }
-     }
-   },
-   
-   .groups = "drop"
- ) %>%
- select(-isoform_list, -order_list)
+ group_by(SampleID, gene) %>%
+      group_modify(~{
+        
+        x <- .x
+        
+        # --- build isoform-specific info ---
+        iso_info <- x %>%
+          group_split(isoform) %>%
+          map_df(function(g){
+            
+            ord <- as.numeric(g$order)
+            
+            tibble(
+              isoform     = unique(g$isoform),
+              cds_len     = sum(g$CDS_end - g$CDS_start + 1),
+              continuous  = all(diff(sort(ord)) == 1),
+              nblock      = length(ord),
+              exon_order  = paste(sort(ord), collapse = "-"),
+              pos_sig     = paste(
+                g$CDS_chr, g$CDS_start, g$CDS_end,
+                g$CDS_strand, sep = ":", collapse = ";"
+              )
+            )
+          })
+        
+        # --- isoform selection rules ---
+        if (any(iso_info$continuous)) {
+          
+          iso_sub <- iso_info %>% filter(continuous)
+          
+          # longest CDS among continuous
+          max_len <- max(iso_sub$cds_len)
+          iso_sub <- iso_sub %>% filter(cds_len == max_len)
+          
+          # same long & same pos → keep them all
+          chosen_pos <- iso_sub$pos_sig[1]
+          chosen_isoforms <- iso_sub %>% filter(pos_sig == chosen_pos) %>% pull(isoform)
+          
+        } else {
+          # fallback to longest discontinuous
+          max_len <- max(iso_info$cds_len)
+          chosen_isoforms <- iso_info %>% filter(cds_len == max_len) %>% pull(isoform)
+        }
+        
+        chosen_rows <- x %>% filter(isoform %in% chosen_isoforms)
+        
+        tibble(
+          SampleID   = unique(x$SampleID),
+          gene       = unique(x$gene),
+          gene_strand= first(x$strand),
+          
+          isoform    = paste(chosen_isoforms, collapse="||"),
+          
+          nblock     = n_distinct(chosen_rows$order),
+          
+          NO.Exon    = paste(
+            sort(unique(as.numeric(chosen_rows$order))),
+            collapse = "-"
+          ),
+          
+          position   = paste(
+            paste(x$CDS_chr, x$CDS_start, x$CDS_end, x$CDS_strand, sep = ":"),
+            collapse = ";"
+          ),
+          
+          nExon_isof = NA,
+          length_isof = NA,
+          fusion = "Y",   # df2 is fusion → changed to Y automatically
+          
+          note = if (any(iso_info$continuous)) {
+            "continuous CDS and edge-matching"
+          } else {
+            "discontinuous CDS"
+          },
+          
+          type = if (any(iso_info$continuous)) {
+            "normal"
+          } else {
+            "novel with deletion"
+          }
+        )
+      }) %>%
+      ungroup()
 Sys.time()
 
 
@@ -782,7 +709,6 @@ df2_summary_cont <- df2_summary_cont%>%
 Sys.time()
 
 df2_summary[df2_summary$note == "continuous CDS and edge-matching", ] <- df2_summary_cont
-
 print(table(df2_summary$note))
 
 
@@ -822,25 +748,31 @@ df2_summary <- df2_summary %>%
 
 
 ########### v2
-head(df2_summary)
+table(df2_summary$note)
 
 df_counts <- df2_summary%>%
   group_by(SampleID)%>%
   mutate(n_rows = n())
 
-dim(df_counts)
+print(dim(df_counts))
 
 # df1: groups where row count > 2
 df_counts21 <- df_counts%>%
   filter(n_rows > 2) %>%
   select(-n_rows)
 
+  
+
 
 # Apply per SampleID
-df2_summary_grouped1 <- df_counts21 %>%
-  group_by(SampleID) %>%
-  filter(n() >= 3) %>%
-  group_modify(~combine_all_cols(.x))
+if (nrow(df_counts21) == 0) {
+  message(" ")
+} else {
+  df2_summary_grouped1 <- df_counts21 %>%
+    group_by(SampleID) %>%
+    filter(n() >= 3) %>%
+    group_modify(~combine_all_cols(.x))
+}
 
 
 ###################### 
@@ -848,6 +780,8 @@ df2_summary_grouped1 <- df_counts21 %>%
 df_counts22 <- df_counts%>%
   filter(n_rows == 2)%>%
   select(-n_rows)
+
+dim(df_counts22)
 
 ######### fusion 1x1 
 Sys.time()
