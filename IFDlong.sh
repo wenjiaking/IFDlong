@@ -248,10 +248,22 @@ check_tool() {
     fi
 
     # Choose the last path (latest one in PATH order)
-    tool_path="${tool_paths[-1]}"
+    latest_path="${tool_paths[0]}"
+    latest_version="0"
 
-    echo "$tool_name found at: $tool_path"
-    eval "${tool_name}='$tool_path'"
+    for path in "${tool_paths[@]}"; do
+        # Get version number, e.g., "4.4.3"
+        version=$("$path" --version 2>&1 | grep -oP '\d+\.\d+\.\d+')
+
+        # Compare versions
+        if [[ $(printf '%s\n%s\n' "$version" "$latest_version" | sort -V | tail -n1) == "$version" ]]; then
+            latest_version="$version"
+            latest_path="$path"
+        fi
+    done
+
+    echo "$tool_name found at: $latest_path (version $latest_version)"
+    eval "${tool_name}='$latest_path'"
 }
 
 
