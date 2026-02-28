@@ -2,7 +2,7 @@
 
 ## About ##
 
-IFDlong is a bioinformatics pipeline that can perform long-read RNA-seq annotation at isoform levels, fusion detection, as well as fusion and isoform quantification.
+IFDlong is a bioinformatics pipeline that can perform long-read RNA-seq annotation at isoform levels, fusion detection, as well as fusion and isoform quantification. The latest version has been moved to https://github.com/SilviaLiu12345/IFDlong2
 
 
 ## Installation ##
